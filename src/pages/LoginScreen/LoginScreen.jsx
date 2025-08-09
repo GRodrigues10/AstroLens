@@ -10,6 +10,17 @@ function LoginScreen() {
   const [showPassword, setShowPassword] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+
+
+  const enter = () => {
+    if(!email.trim() || !password.trim()){
+      alert('Preencha todos os campos!');
+      return;
+    }
+    navigate('/app-nasa');
+  }
+
+
   const forgotPassword = () => {
     navigate("/forgot-password");
   };
@@ -57,7 +68,7 @@ function LoginScreen() {
           </span>
         </div>
 
-        <button>Entrar</button>
+        <button onClick={enter}>Entrar</button>
         <div className="accounts">
           <p onClick={forgotPassword}>Esqueceu a Senha?</p>
           <p onClick={createAccount}>Criar Conta</p>

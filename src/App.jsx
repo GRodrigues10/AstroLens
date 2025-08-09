@@ -19,7 +19,6 @@ function App() {
           <Route path='/forgot-password' element = {<ForgotPassword/>}/>
           <Route path='/create-account' element = {<CreateAccount/>} />
           <Route path='/app-nasa' element={<AppNasa/>}/>
-          
         </Routes>
       </Router>
     </>

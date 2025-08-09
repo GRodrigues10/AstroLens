@@ -18,7 +18,7 @@ function CreateAccount() {
 
   const navigate = useNavigate();
   const register = () => {
-    navigate('/');
+    navigate("/");
   };
 
   // Lista de dias (1 a 31)
@@ -26,13 +26,26 @@ function CreateAccount() {
 
   // Lista de meses
   const months = [
-    "Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho",
-    "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"
+    "Janeiro",
+    "Fevereiro",
+    "Março",
+    "Abril",
+    "Maio",
+    "Junho",
+    "Julho",
+    "Agosto",
+    "Setembro",
+    "Outubro",
+    "Novembro",
+    "Dezembro",
   ];
 
   // Lista de anos (de 1900 até o ano atual)
   const currentYear = new Date().getFullYear();
-  const years = Array.from({ length: currentYear - 1900 + 1 }, (_, i) => currentYear - i);
+  const years = Array.from(
+    { length: currentYear - 1900 + 1 },
+    (_, i) => currentYear - i
+  );
 
   return (
     <StylesCreateAccount>
@@ -116,24 +129,39 @@ function CreateAccount() {
             <h2>Data de Nascimento</h2>
           </div>
           <div className="data">
-            <select value={birthDay} onChange={(e) => setBirthDay(e.target.value)}>
+            <select
+              value={birthDay}
+              onChange={(e) => setBirthDay(e.target.value)}
+            >
               <option value="">Dia</option>
-              {days.map(day => (
-                <option key={day} value={day}>{day}</option>
+              {days.map((day) => (
+                <option key={day} value={day}>
+                  {day}
+                </option>
               ))}
             </select>
 
-            <select value={birthMonth} onChange={(e) => setBirthMonth(e.target.value)}>
+            <select
+              value={birthMonth}
+              onChange={(e) => setBirthMonth(e.target.value)}
+            >
               <option value="">Mês</option>
               {months.map((month, index) => (
-                <option key={index} value={index + 1}>{month}</option>
+                <option key={index} value={index + 1}>
+                  {month}
+                </option>
               ))}
             </select>
 
-            <select value={birthYear} onChange={(e) => setBirthYear(e.target.value)}>
+            <select
+              value={birthYear}
+              onChange={(e) => setBirthYear(e.target.value)}
+            >
               <option value="">Ano</option>
-              {years.map(year => (
-                <option key={year} value={year}>{year}</option>
+              {years.map((year) => (
+                <option key={year} value={year}>
+                  {year}
+                </option>
               ))}
             </select>
           </div>
