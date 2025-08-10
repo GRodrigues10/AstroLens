@@ -13,7 +13,7 @@ function App() {
   
   return (
     <>
-      <Router>
+      <Router basename='/AstroView'>
         <Routes>
           <Route path='/' element={<LoginScreen/>}/>
           <Route path='/forgot-password' element = {<ForgotPassword/>}/>
