@@ -1,37 +1,129 @@
-import React, { useState } from 'react'
-import { StylesAppNasa } from './Styles'
-import earth from '../../assets/earth.png'
-import { useNavigate } from 'react-router-dom'
+import React, { useState, useEffect } from "react";
+import { StylesAppNasa } from "./Styles";
+import earthImg from "../../assets/earth.png";
+import marsImg from '../../assets/mars.png'
+import netunoImg from '../../assets/netuno.png'
+import jupiterImg from '../../assets/jupiter.png'
+import uranoImg from '../../assets/urano.png'
+import saturnoImg from '../../assets/saturno2.png'
+import mercurioImg from '../../assets/mercurio.png'
+import venusImg from '../../assets/venus.png'
+import plutaoImg from '../../assets/plutao.png'
+import { useNavigate } from "react-router-dom";
 
 function AppNasa() {
   const [activeTab, setActiveTab] = useState(null);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [search, setSearch] = useState("");
+  const [data, setData] = useState(null);
+  const [imageUrl, setImageUrl] = useState(earthImg)
+
+ const planetsImgs = {
+  earth:earthImg,
+  mars:marsImg,
+  neptune:netunoImg,
+  jupiter:jupiterImg,
+  uranus:uranoImg,
+  saturn:saturnoImg,
+  mercury:mercurioImg,
+  venus:venusImg,
+  pluto:plutaoImg
+ }
 
   const tabs = [
-    { id: 'planetas', label: 'Planetas e Exoplanetas' },
-    { id: 'galeria', label: 'Galeria Espacial' },
-    { id: 'apod', label: 'APOD' },
-    { id: 'previsao', label: 'Previsão Espacial' }
+    { id: "planetas", label: "Planetas e Exoplanetas" },
+    { id: "galeria", label: "Galeria Espacial" },
+    { id: "apod", label: "APOD" },
+    { id: "previsao", label: "Previsão Espacial" },
   ];
 
   const navigate = useNavigate();
 
+  useEffect(() => {
+    // Buscar Terra ao montar o componente
+    async function fetchEarth() {
+      try {
+        const url = `https://api.le-systeme-solaire.net/rest/bodies/earth`;
+        const response = await fetch(url);
+        if (response.ok) {
+          const result = await response.json();
+          setData(result);
+          setSearch("Earth");
+          setActiveTab("planetas");
+        }
+      } catch (error) {
+        console.error("Erro ao buscar Terra:", error);
+      }
+    }
+    fetchEarth();
+  }, []);
 
   function handleTabClick(id) {
-    setActiveTab(id)
-    setMenuOpen(false)
+    setActiveTab(id);
+    setMenuOpen(false);
   }
 
-
-  function exit(){
-    navigate('/')
+  function exit() {
+    navigate("/");
   }
+
+  const nomePTtoID = {
+    terra: "earth",
+    marte: "mars",
+    jupiter: "jupiter",
+    saturno: "saturn",
+    venus: "venus",
+    mercurio: "mercury",
+    netuno: "neptune",
+    urano: "uranus",
+    plutao: "pluto",
+  };
+
+  async function apiData() {
+    try {
+      const nomeBusca = search.trim().toLowerCase();
+
+      if (!nomeBusca) {
+        console.warn("Digite o nome de um planeta para buscar");
+        return;
+      }
+
+      
+
+      const idAPI = nomePTtoID[nomeBusca] || nomeBusca;
+      if (planetsImgs[idAPI]) {
+  setImageUrl(planetsImgs[idAPI]);
+} else {
+  setImageUrl(earthImg); // fallback se não tiver imagem
+}
+
+      const url = `https://api.le-systeme-solaire.net/rest/bodies/${idAPI}`;
+      const response = await fetch(url);
+
+      if (!response.ok) {
+        console.error("Planeta não encontrado:", response.status);
+        setData(null);
+        return;
+      }
+
+      const result = await response.json();
+      setData(result);
+      setActiveTab("planetas");
+      console.log("Planeta encontrado:", result);
+    } catch (error) {
+      console.error("Erro ao buscar dados:", error);
+      setData(null);
+    }
+  }
+
+  // Preparar dados das luas com segurança
+  const luas = data?.moons || [];
+
   return (
     <StylesAppNasa>
       <h1>NASA Space Explorer</h1>
 
       <div className="content">
-        {/* Botão hambúrguer no topo direito */}
         <button
           className="hamburger"
           onClick={() => setMenuOpen(!menuOpen)}
@@ -40,13 +132,12 @@ function AppNasa() {
           ☰
         </button>
 
-        {/* Menu hambúrguer dentro da content - aparece só quando aberto no mobile */}
         {menuOpen && (
           <nav className="menu-hamburger mobile-menu">
-            {tabs.map(tab => (
+            {tabs.map((tab) => (
               <div
                 key={tab.id}
-                className={`aba-item ${activeTab === tab.id ? 'active' : ''}`}
+                className={`aba-item ${activeTab === tab.id ? "active" : ""}`}
                 onClick={() => handleTabClick(tab.id)}
               >
                 {tab.label}
@@ -55,12 +146,11 @@ function AppNasa() {
           </nav>
         )}
 
-        {/* Menu fixo visível só no desktop */}
         <nav className="menu-desktop">
-          {tabs.map(tab => (
+          {tabs.map((tab) => (
             <div
               key={tab.id}
-              className={`aba-item ${activeTab === tab.id ? 'active' : ''}`}
+              className={`aba-item ${activeTab === tab.id ? "active" : ""}`}
               onClick={() => handleTabClick(tab.id)}
             >
               {tab.label}
@@ -68,61 +158,91 @@ function AppNasa() {
           ))}
         </nav>
 
-        {/* Conteúdo da aba ativa */}
-        {activeTab === 'planetas' && (
+        {activeTab === "planetas" && (
           <div className="tab-content">
-            <h2>Planetas e Exoplanetas</h2>
-            {/* Conteúdo da aba */}
+            {/* <h2>Planetas e Exoplanetas</h2> */}
           </div>
         )}
-        {activeTab === 'galeria' && (
+        {activeTab === "galeria" && (
           <div className="tab-content">
             <h2>Galeria Espacial</h2>
-            {/* Conteúdo da aba */}
           </div>
         )}
-        {activeTab === 'apod' && (
+        {activeTab === "apod" && (
           <div className="tab-content">
             <h2>APOD</h2>
-            {/* Conteúdo da aba */}
           </div>
         )}
-        {activeTab === 'previsao' && (
+        {activeTab === "previsao" && (
           <div className="tab-content">
             <h2>Previsão Espacial</h2>
-            {/* Conteúdo da aba */}
           </div>
         )}
 
-        {/* Conteúdo fixo abaixo, independente da aba */}
         <div className="data-text">
           <h2>Pesquise o Planeta:</h2>
           <div className="input">
-            <input type="text" />
-            <button>Buscar</button>
+            <input
+              type="text"
+              value={search}
+              onChange={(e) => setSearch(e.target.value)}
+              placeholder="Digite o nome em inglês (ex: Earth)"
+            />
+            <button onClick={apiData}>Buscar</button>
           </div>
-          <div className="planetary-data">
-            <h2>Dados do Planeta</h2>
-            <div className="row">
-              <span className="label"><strong>Name:</strong> </span>
-              <span className="value">Terra</span>
-            </div>
-            <div className="row">
-              <span className="label"><strong>Radius:</strong> </span>
-              <span className="value">1:00 Rg</span>
-            </div>
-            <div className="row">
-              <span className="label"><strong>Temperature:</strong> </span>
-              <span className="value">208 K</span>
-            </div>
 
-            <button className='exit' onClick={exit}>Sair</button>
+          {data ? (
+            <div className="planetary-data">
+              <h2>Dados do Planeta</h2>
+
+              <div className="row">
+                <span className="label">
+                  <strong>Nome:</strong>{" "}
+                </span>
+                <span className="value">{data.englishName}</span>
+              </div>
+
+              <div className="row">
+                <span className="label">
+                  <strong>Luas:</strong>{" "}
+                </span>
+                <span className="value">
+                  {luas.length > 0
+                    ? luas
+                        .slice(0, 5)
+                        .map((moon) => moon.moon)
+                        .join(", ") + (luas.length > 5 ? " ..." : "")
+                    : "Sem luas"}
+                </span>
+              </div>
+
+              <div className="row">
+                <span className="label">
+                  <strong>Temperatura:</strong>{" "}
+                </span>
+                <span className="value">
+                  {data.avgTemp !== undefined
+                    ? `${(data.avgTemp - 273.15).toFixed(1)} °C`
+                    : "N/D"}
+                </span>
+              </div>
+
+              <button className="exit" onClick={exit}>
+                Sair
+              </button>
+            </div>
+          ) : (
+            <p>Nenhum dado para mostrar. Faça uma busca.</p>
+          )}
+
+          <div className="img">
+           <img src={imageUrl} alt={`Imagem do planeta ${data?.englishName || ""}`} />
+
           </div>
-          <div className="img"><img src={earth} alt="Imagem da terra" /></div>
         </div>
       </div>
     </StylesAppNasa>
-  )
+  );
 }
 
-export default AppNasa
+export default AppNasa;
