@@ -114,6 +114,7 @@ export const StylesAppNasa = styled.div`
   .content .input {
     display: flex;
     width: 100%;
+   
   }
 
   .content input {
@@ -123,6 +124,7 @@ export const StylesAppNasa = styled.div`
     border-radius: 4px;
     padding: 10px;
     outline: none;
+   
   }
 
   .content button {
@@ -152,12 +154,138 @@ export const StylesAppNasa = styled.div`
     background: transparent !important;
   }
 
+  .tab-content2{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+   
+  }
+
+  .tab-content2 h2{
+    align-self: flex-start;
+    
+  }
+
+  .tab-content2 .gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;       /* espaçamento entre as imagens */
+  justify-content: center; /* centraliza as imagens na linha */
+  padding: 10px 0;
+}
+
+.tab-content2 .gallery img {
+  width: 80%;
+  max-width: 250px;    /* largura fixa pra manter padrão */
+  height: 160px;   /* altura fixa pra manter padrão */
+  object-fit: cover; /* garante que a imagem preencha o espaço sem distorcer */
+  border-radius: 8px;
+  box-shadow: 0 0 8px rgba(0,0,0,0.3);
+  cursor: pointer; /* fica interativo pra usuário */
+  transition: transform 0.3s ease;
+}
+
+.img3{
+  display: none;
+}
+
+.img4{
+  display: none;
+}
+
+.img5{
+  display: none;
+}
+
+.img6{
+  display: none;
+}
+
+.img7{
+  display: none;
+}
+
+.img8{
+  display: none;
+}
+
+.img9{
+  display: none;
+}
+
+
+
+.tab-content2 .gallery img:hover {
+  transform: scale(1.05); /* efeito hover suave */
+}
+
+.tab-content2  .button-gallery {
+    font-size: 1.2rem;
+    position: relative;
+    top: 10px;
+    padding: 8px;
+    width: 80%;
+    max-width: 200px;
+}
+
   span {
     font-size: 1.1rem;
   }
 
   .exit{
     display: none;
+  }
+
+  @media screen and (min-width:530px) {
+        
+.tab-content2 .gallery{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+}
+
+.tab-content2 .gallery img {
+  width: 80%;
+  max-width: 180px;    /* largura fixa pra manter padrão */
+  height: 150px;   /* altura fixa pra manter padrão */
+  object-fit: cover; /* garante que a imagem preencha o espaço sem distorcer */
+  border-radius: 8px;
+  box-shadow: 0 0 8px rgba(0,0,0,0.3);
+  cursor: pointer; /* fica interativo pra usuário */
+  transition: transform 0.3s ease;
+}
+        
+.img3{
+  display: flex;
+}
+
+.img4{
+  display: flex;
+}
+
+.img5{
+  display: none;
+}
+
+.img6{
+  display: none;
+}
+
+.img7{
+  display: none;
+}
+
+.img8{
+  display: none;
+}
+
+.img9{
+  display: none;
+}
+
+
   }
 
   /* Media query para desktop */
@@ -203,9 +331,39 @@ export const StylesAppNasa = styled.div`
       z-index: 5;
     }
 
+
     img{
         width: 250px;
     }
+
+
+    .tab-content2 .gallery img {
+  width: 80%;
+  max-width: 150px;    /* largura fixa pra manter padrão */
+  height: 120px;   /* altura fixa pra manter padrão */
+  object-fit: cover; /* garante que a imagem preencha o espaço sem distorcer */
+  border-radius: 8px;
+  box-shadow: 0 0 8px rgba(0,0,0,0.3);
+  cursor: pointer; /* fica interativo pra usuário */
+  transition: transform 0.3s ease;
+}
+
+    .img6{
+  display:flex;
+}
+
+.img7{
+  display: flex;
+}
+
+.img8{
+  display: none;
+}
+
+.img9{
+  display: none;
+}
+
 
     .data-text h2 {
       font-size: 1.5rem;
@@ -242,9 +400,32 @@ export const StylesAppNasa = styled.div`
       z-index: 5;
     }
 
+    .tab-content2 .gallery img {
+  width: 80%;
+  max-width: 160px;    /* largura fixa pra manter padrão */
+  height: 130px;   /* altura fixa pra manter padrão */
+  object-fit: cover; /* garante que a imagem preencha o espaço sem distorcer */
+  border-radius: 8px;
+  box-shadow: 0 0 8px rgba(0,0,0,0.3);
+  cursor: pointer; /* fica interativo pra usuário */
+  transition: transform 0.3s ease;
+}
+
+.img8{
+  display: flex;
+}
+
+.img9{
+  display: flex;
+}
+
+  
+    
+
     img{
         width: 300px;
     }
+
   }
 
     @media screen  and (min-width:1200px){
@@ -270,10 +451,10 @@ export const StylesAppNasa = styled.div`
             margin-top: 30px;
         }
         .label{
-            font-size: 1.5rem !important;
+            font-size: 1.35rem !important;
         }
         .value{
-            font-size: 1.4rem;
+            font-size: 1.25rem;
         }
       .img {
       position: absolute; /* fixa a imagem */
@@ -284,6 +465,26 @@ export const StylesAppNasa = styled.div`
         
       z-index: 5;
     }
+
+    
+    .tab-content2 .gallery img {
+  width: 80%;
+  max-width: 180px;    /* largura fixa pra manter padrão */
+  height: 150px;   /* altura fixa pra manter padrão */
+  object-fit: cover; /* garante que a imagem preencha o espaço sem distorcer */
+  border-radius: 8px;
+  box-shadow: 0 0 8px rgba(0,0,0,0.3);
+  cursor: pointer; /* fica interativo pra usuário */
+  transition: transform 0.3s ease;
+}
+
+.img8{
+  display: flex;
+}
+
+.img9{
+  display: flex;
+}
 
     .exit{
         margin-top: 35px;
