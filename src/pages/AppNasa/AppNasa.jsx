@@ -1,25 +1,27 @@
 import React, { useState, useEffect } from "react";
 import { StylesAppNasa } from "./Styles";
 import earthImg from "../../assets/earth.png";
-import marsImg from '../../assets/mars.png';
-import netunoImg from '../../assets/netuno.png';
-import jupiterImg from '../../assets/jupiter.png';
-import uranoImg from '../../assets/urano.png';
-import saturnoImg from '../../assets/saturno2.png';
-import mercurioImg from '../../assets/mercurio.png';
-import venusImg from '../../assets/venus.png';
-import plutaoImg from '../../assets/plutao.png';
-import img1 from '../../assets/img-teste.jpg'
-import img2 from '../../assets/img-teste1.jpg'
-import img3 from '../../assets/img-teste2.jpg'
-import img4 from '../../assets/img-teste3.jpg'
-import img5 from '../../assets/img-teste4.jpg'
-import img6 from '../../assets/img-teste5.jpg'
-import img7 from '../../assets/img-teste7.jpg'
-import img8 from '../../assets/img-teste8.jpg'
-import img9 from '../../assets/img-teste9.jpg'
+import marsImg from "../../assets/mars.png";
+import netunoImg from "../../assets/netuno.png";
+import jupiterImg from "../../assets/jupiter.png";
+import uranoImg from "../../assets/urano.png";
+import saturnoImg from "../../assets/saturno2.png";
+import mercurioImg from "../../assets/mercurio.png";
+import venusImg from "../../assets/venus.png";
+import plutaoImg from "../../assets/plutao.png";
+import img1 from "../../assets/img-teste.jpg";
+import img2 from "../../assets/img-teste1.jpg";
+import img3 from "../../assets/img-teste2.jpg";
+import img4 from "../../assets/img-teste3.jpg";
+import img5 from "../../assets/img-teste4.jpg";
+import img6 from "../../assets/img-teste5.jpg";
+import img7 from "../../assets/img-teste7.jpg";
+import img8 from "../../assets/img-teste8.jpg";
+import img9 from "../../assets/img-teste9.jpg";
 
 import { useNavigate } from "react-router-dom";
+
+const APIKEY = "QH7sKVDhwKAMTjEYAh8UdhjeAfN78CDplRi9Savj";
 
 function AppNasa() {
   const [activeTab, setActiveTab] = useState(null);
@@ -27,6 +29,7 @@ function AppNasa() {
   const [search, setSearch] = useState("");
   const [data, setData] = useState(null);
   const [imageUrl, setImageUrl] = useState(earthImg);
+  const [apodData, setApodData] = useState(null);
 
   const planetsImgs = {
     earth: earthImg,
@@ -89,7 +92,6 @@ function AppNasa() {
     plutão: "pluto",
   };
 
-
   async function apiData() {
     try {
       const nomeBusca = search.trim().toLowerCase();
@@ -128,10 +130,21 @@ function AppNasa() {
   // Preparar dados das luas com segurança
   const luas = data?.moons || [];
 
-
   const seeMore = () => {
-    navigate('/gallery-nasa')
-  }
+    navigate("/gallery-nasa");
+  };
+
+  const apod = async () => {
+    const dataApod = await fetch(
+      `https://api.nasa.gov/planetary/apod?api_key=${APIKEY}`
+    );
+    const response = await dataApod.json();
+    setApodData(response);
+  };
+
+  useEffect(() => {
+    apod();
+  }, []);
 
   return (
     <StylesAppNasa>
@@ -181,7 +194,6 @@ function AppNasa() {
                 type="text"
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
-                placeholder="Digite o nome em inglês (ex: Earth)"
               />
               <button onClick={apiData}>Buscar</button>
             </div>
@@ -191,12 +203,16 @@ function AppNasa() {
                 <h2>Dados do Planeta</h2>
 
                 <div className="row">
-                  <span className="label"><strong>Nome:</strong></span>
+                  <span className="label">
+                    <strong>Nome: </strong>
+                  </span>
                   <span className="value">{data.englishName}</span>
                 </div>
 
                 <div className="row">
-                  <span className="label"><strong>Luas:</strong></span>
+                  <span className="label">
+                    <strong>Luas: </strong>
+                  </span>
                   <span className="value">
                     {luas.length > 0
                       ? luas
@@ -208,7 +224,9 @@ function AppNasa() {
                 </div>
 
                 <div className="row">
-                  <span className="label"><strong>Temperatura:</strong></span>
+                  <span className="label">
+                    <strong>Temperatura: </strong>
+                  </span>
                   <span className="value">
                     {data.avgTemp !== undefined
                       ? `${(data.avgTemp - 273.15).toFixed(1)} °C`
@@ -216,44 +234,72 @@ function AppNasa() {
                   </span>
                 </div>
 
-                <button className="exit" onClick={exit}>Sair</button>
+                <button className="exit" onClick={exit}>
+                  Sair
+                </button>
               </div>
             ) : (
               <p>Nenhum dado para mostrar. Faça uma busca.</p>
             )}
 
             <div className="img">
-              <img src={imageUrl} alt={`Imagem do planeta ${data?.englishName || ""}`} />
+              <img
+                src={imageUrl}
+                alt={`Imagem do planeta ${data?.englishName || ""}`}
+              />
             </div>
           </div>
         )}
 
-      {activeTab === "galeria" && (
-  <div className="tab-content2">
-    <h2>Galeria Espacial</h2>
+        {activeTab === "galeria" && (
+          <div className="tab-content2">
+            <h2>Galeria Espacial</h2>
 
-    <div className="gallery">
-      <img src={img1} alt="Imagem 1" />
-      <img src={img2} alt="Imagem 2" />
-      <img src={img3} alt="Imagem 3" className="img3"/>
-      <img src={img4} alt="Imagem 4" className="img4"/>
-      <img src={img5} alt="Imagem 5" className="img5"/>
-      <img src={img6} alt="Imagem 6" className="img6"/>
-      <img src={img7} alt="Imagem 7" className="img7"/>
-      <img src={img8} alt="Imagem 8" className="img8"/>
-      <img src={img9} alt="Imagem 9" className="img9"/>
-      {/* Se quiser, pode adicionar mais imagens aqui */}
-    </div>
-        <button className="button-gallery" onClick={seeMore}>Ver mais</button>
-
-  </div>
-)}
-
+            <div className="gallery">
+              <img src={img1} alt="Imagem 1" />
+              <img src={img2} alt="Imagem 2" />
+              <img src={img3} alt="Imagem 3" className="img3" />
+              <img src={img4} alt="Imagem 4" className="img4" />
+              <img src={img5} alt="Imagem 5" className="img5" />
+              <img src={img6} alt="Imagem 6" className="img6" />
+              <img src={img7} alt="Imagem 7" className="img7" />
+              <img src={img8} alt="Imagem 8" className="img8" />
+              <img src={img9} alt="Imagem 9" className="img9" />
+              {/* Se quiser, pode adicionar mais imagens aqui */}
+            </div>
+            <button className="button-gallery" onClick={seeMore}>
+              Ver mais
+            </button>
+          </div>
+        )}
 
         {activeTab === "apod" && (
-          <div className="tab-content">
-            <h2>APOD</h2>
-            {/* Conteúdo APOD aqui */}
+          <div className="tab-content3">
+            <h2>Imagem Astronômica do Dia:</h2>
+            {apodData ? (
+              <div className="apod-content">
+                <h3>{apodData.title}</h3>
+                {apodData.media_type === "image" ? (
+                  <img src={apodData.url} alt={apodData.title} />
+                ) : apodData.media_type === "video" ? (
+                  <iframe
+                    title="APOD Video"
+                    src={apodData.url}
+                    frameBorder="0"
+                    allow="encrypted-media"
+                    allowFullScreen
+                    width="100%"
+                    height="400px"
+                  />
+                ) : null}
+                <p>{apodData.explanation}</p>
+                <p>
+                  <small>{apodData.date}</small>
+                </p>
+              </div>
+            ) : (
+              <p>Carregando APOD...</p>
+            )}
           </div>
         )}
 

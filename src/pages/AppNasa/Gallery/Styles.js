@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import background from '../../../assets/spaceApp.png'
+import background from "../../../assets/spaceApp.png";
 
 export const StylesGallery = styled.div`
   * {
@@ -17,12 +17,35 @@ export const StylesGallery = styled.div`
 
   display: flex;
   flex-direction: column;
-  align-items: center;  /* centraliza conteúdo horizontalmente */
-  padding-bottom: 30px; /* para garantir espaço no final da página */
+  align-items: center;
+  padding-bottom: 30px;
+
+  .loading-text {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.7rem;
+    color: #00ced1;
+    user-select: none;
+    animation: blink 1.6s infinite;
+    letter-spacing: 2px;
+    font-weight: 700;
+  }
+
+  @keyframes blink {
+    0%,
+    100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.3;
+    }
+  }
 
   h1 {
     font-size: 2.5rem;
-    color: #D3D3D3;
+    color: #d3d3d3;
     text-align: center;
     padding-top: 20px;
   }
@@ -39,7 +62,7 @@ export const StylesGallery = styled.div`
   .gallery-container img {
     height: 250px;
     width: 280px;
-    border: 2px solid #00CED1;
+    border: 2px solid #00ced1;
     border-radius: 10px;
     margin-bottom: 20px;
     cursor: pointer;
@@ -52,7 +75,7 @@ export const StylesGallery = styled.div`
 
   button {
     font-size: 1.1rem;
-    background-color: #3B6CB7;
+    background-color: #3b6cb7;
     color: white;
     border: none;
     padding: 10px;
@@ -67,7 +90,7 @@ export const StylesGallery = styled.div`
     margin-left: auto;
     margin-right: auto;
     display: block; /* para centralizar o botão */
-    
+
     &:hover {
       background-color: #2467ca;
     }

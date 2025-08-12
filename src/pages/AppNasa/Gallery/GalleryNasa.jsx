@@ -1,37 +1,55 @@
-import React from "react";
-import img1 from "../../../assets/img-teste.jpg";
-import img2 from "../../../assets/img-teste1.jpg";
-import img3 from "../../../assets/img-teste2.jpg";
-import img4 from "../../../assets/img-teste3.jpg";
-import img5 from "../../../assets/img-teste4.jpg";
-import img6 from "../../../assets/img-teste5.jpg";
-import img7 from "../../../assets/img-teste7.jpg";
-import img8 from "../../../assets/img-teste8.jpg";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { StylesGallery } from "./Styles";
 
 function GalleryNasa() {
+  const [imagesGallery, setImagesGallery] = useState([]);
   const navigate = useNavigate();
+
   const back = () => {
     navigate("/app-nasa");
   };
 
-  return (
-    <StylesGallery>
-      <h1>Galeria Espacial</h1>
-      <div className="gallery-container">
-        <img src={img1} alt="Imagem 1" />
-        <img src={img2} alt="Imagem 2" />
-        <img src={img3} alt="Imagem 3" />
-        <img src={img4} alt="Imagem 4" />
-        <img src={img5} alt="Imagem 5" />
-        <img src={img6} alt="Imagem 6" />
-        <img src={img7} alt="Imagem 7" />
-        <img src={img8} alt="Imagem 8" />
-      </div>
-      <button onClick={back}>Voltar</button>
-    </StylesGallery>
-  );
+  async function fetchImages() {
+    try {
+      const response = await fetch(
+        "https://images-api.nasa.gov/search?q=galaxy&media_type=image"
+      );
+      const data = await response.json();
+      const items = data.collection.items;
+
+      const urls = items
+        .map((item) => (item.links && item.links[0] ? item.links[0].href : null))
+        .filter(Boolean);
+
+      setImagesGallery(urls);
+    } catch (error) {
+      console.error("Erro ao buscar imagens da NASA:", error);
+    }
+  }
+
+  useEffect(() => {
+    fetchImages();
+  }, []);
+
+return (
+  <StylesGallery>
+    {imagesGallery.length === 0 ? (
+      <p className="loading-text">Carregando imagens...</p>
+    ) : (
+      <>
+        <h1>Galeria Espacial</h1>
+        <div className="gallery-container">
+          {imagesGallery.map((url, index) => (
+            <img key={index} src={url} alt={`Imagem espacial ${index + 1}`} />
+          ))}
+        </div>
+        <button onClick={back}>Voltar</button>
+      </>
+    )}
+  </StylesGallery>
+);
+
 }
 
 export default GalleryNasa;

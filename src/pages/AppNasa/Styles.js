@@ -135,6 +135,14 @@ export const StylesAppNasa = styled.div`
     margin-left: 8px;
     border-radius: 4px;
     cursor: pointer;
+    transition: .4s ease;
+
+    &:hover{
+    background-color: #2a68c5ff;
+
+    }
+
+    
   }
 
   .row {
@@ -233,9 +241,35 @@ export const StylesAppNasa = styled.div`
     font-size: 1.1rem;
   }
 
+  .tab-content3 h2{
+    font-size: 1.1rem;
+    width: 200px;
+  }
+
+  .apod-content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .apod-content img{
+    margin-top: 10px;
+    border: 2px solid #7FFFD4;
+    border-radius: 5px;
+
+  }
+
+  .apod-content p{
+    margin-top: 10px;
+    font-size: 0.58rem;
+  }
+
   .exit{
     display: none;
   }
+
+  
 
   @media screen and (min-width:530px) {
         
@@ -284,6 +318,21 @@ export const StylesAppNasa = styled.div`
 .img9{
   display: none;
 }
+
+
+.tab-content3 h2{
+    font-size: 1.3rem;
+    width: 300px;
+  }
+
+
+
+
+
+  .apod-content p{
+    margin-top: 10px;
+    font-size: 0.7rem;
+  }
 
 
   }
