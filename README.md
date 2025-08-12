@@ -1,12 +1,15 @@
-# React + Vite
+# AstroView
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+AstroView é uma aplicação web interativa desenvolvida com React.js que oferece uma experiência completa para entusiastas do espaço e astronomia. Com uma interface moderna e intuitiva, o AstroView permite que usuários se cadastrem, façam login e recuperem suas senhas para acessar diversas funcionalidades espaciais.
 
-Currently, two official plugins are available:
+Principais recursos do AstroView incluem:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Pesquisa detalhada de planetas do sistema solar, com dados oficiais e atualizados (usando a API do Le Systeme Solaire), exibindo informações como luas, temperatura e imagens correspondentes.
 
-## Expanding the ESLint configuration
+- Galeria espacial com imagens impressionantes capturadas por telescópios e sondas espaciais (usando a API de imagens da NASA), que encantam e informam.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- APOD (Astronomical Picture of the Day), integrado diretamente à API NASA APOD, exibindo diariamente uma imagem ou vídeo com explicações científicas.
+
+- Previsão de clima espacial, mostrando eventos como tempestades geomagnéticas, ejeções de massa coronal (CME) e flares solares, fornecendo dados em tempo real para monitoramento do ambiente espacial (usando a API DONKI da NASA).
+
+Construído com as tecnologias React.js, React Router DOM e Styled Components, o AstroView oferece uma navegação fluida e responsiva, garantindo uma experiência agradável em diferentes dispositivos. Ideal para quem quer aprender mais sobre o universo ou simplesmente admirar sua beleza, o AstroView é uma porta de entrada para o espaço ao alcance das suas mãos.
