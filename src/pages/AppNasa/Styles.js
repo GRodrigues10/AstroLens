@@ -246,6 +246,11 @@ export const StylesAppNasa = styled.div`
     width: 200px;
   }
 
+    .tab-content3 h3{
+    font-size: 1rem;
+    width: 200px;
+  }
+
   .apod-content{
     display: flex;
     flex-direction: column;
@@ -263,6 +268,80 @@ export const StylesAppNasa = styled.div`
   .apod-content p{
     margin-top: 10px;
     font-size: 0.58rem;
+  }
+
+  .tab-content4{
+    display: flex;
+    flex-direction: column;
+   
+    
+    gap: 20px;
+    font-size: 1.1rem;
+  
+  }
+
+
+  .tab-content4 > div {
+    cursor: pointer;
+    transition: .4s ease ;
+    &:hover{
+      transform: scale(1.025);
+    }
+  }
+ 
+
+  .tab-content4 .cme{
+    display: flex;
+    padding: 10px;
+    gap: 10px;
+    background-color: #617aacbd;
+    border-radius: 5px;
+    border: 2px solid black;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+
+  }
+
+
+  .tab-content4 .velocidade{
+    display: flex;
+    padding: 10px;
+    gap: 10px;
+     background-color: #617aacbd;
+    border-radius: 5px;
+    border: 2px solid black;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+
+  }
+
+
+  .tab-content4 .flare-solar{
+    display: flex;
+    padding: 10px;
+    gap: 10px;
+     background-color: #617aacbd;
+    border-radius: 5px;
+    border: 2px solid black;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+
+  }
+
+
+  .tab-content4 .tempestade{
+    display: flex;
+    padding: 10px;
+    gap: 10px;
+    background-color: #617aacbd;
+    border-radius: 5px;
+    border: 2px solid black;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
   }
 
   .exit{
@@ -325,8 +404,10 @@ export const StylesAppNasa = styled.div`
     width: 300px;
   }
 
-
-
+  .tab-content3 h3{
+    font-size: 1.2rem;
+    width: 300px;
+  }
 
 
   .apod-content p{
@@ -334,6 +415,13 @@ export const StylesAppNasa = styled.div`
     font-size: 0.7rem;
   }
 
+   .tab-content4 h2{
+    font-size: 1.5rem;
+  }
+
+  .tab-content4 p{
+    font-size: 1.25rem;
+  }
 
   }
 
@@ -380,6 +468,8 @@ export const StylesAppNasa = styled.div`
       z-index: 5;
     }
 
+    
+
 
     img{
         width: 250px;
@@ -421,6 +511,17 @@ export const StylesAppNasa = styled.div`
     .content .planetary-data .row .label {
       font-size: 1.3rem;
     }
+
+      .tab-content4 h2{
+    font-size: 1.6rem;
+    text-align: start;
+  }
+
+  .tab-content4 p{
+    font-size: 1.3rem;
+  }
+
+    
 
     .exit{
         display: flex;
@@ -468,7 +569,9 @@ export const StylesAppNasa = styled.div`
   display: flex;
 }
 
-  
+  .tab-content4 > div{
+    padding: 15px !important ;
+  }
     
 
     img{
@@ -534,6 +637,26 @@ export const StylesAppNasa = styled.div`
 .img9{
   display: flex;
 }
+
+.tab-content3 h2{
+    font-size: 1.4rem;
+    width: 400px;
+  }
+
+  .tab-content3 h3{
+    font-size: 1.3rem;
+    width: 300px !;
+    text-align: center;
+  }
+
+
+
+
+
+  .apod-content p{
+    margin-top: 10px;
+    font-size: 0.8rem;
+  }
 
     .exit{
         margin-top: 35px;

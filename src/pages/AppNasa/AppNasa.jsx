@@ -142,6 +142,14 @@ function AppNasa() {
     setApodData(response);
   };
 
+  const temp = async () => {
+    const dataTemp = await fetch(
+      `https://kauai.ccmc.gsfc.nasa.gov/DONKI/WS/get/CME?startDate=YYYY-MM-DD&endDate=YYYY-MM-DD`
+    );
+    const response = await dataTemp.json();
+    console.log(response);
+  };
+  temp()
   useEffect(() => {
     apod();
   }, []);
@@ -304,9 +312,30 @@ function AppNasa() {
         )}
 
         {activeTab === "previsao" && (
-          <div className="tab-content">
+          <div className="tab-content4">
             <h2>Previsão Espacial</h2>
-            {/* Conteúdo previsão aqui */}
+            <div className="cme">
+              <p><strong>Último CME observado</strong></p>
+              <p>2024-04-22</p>
+            </div>
+
+             <div className="velocidade">
+              <p><strong>Velocidade</strong></p>
+              <p>650 km/s</p>
+            </div>
+
+
+             <div className="flare-solar">
+              <p><strong>Último flare solar</strong></p>
+              <p>2024-04-23</p>
+            </div>
+
+
+             <div className="tempestade">
+              <p><strong>Tempestade geomagnética</strong></p>
+              <p>Moderada</p>
+            </div>
+            
           </div>
         )}
       </div>
