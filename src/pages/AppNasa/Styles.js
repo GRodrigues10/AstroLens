@@ -249,6 +249,7 @@ export const StylesAppNasa = styled.div`
     .tab-content3 h3{
     font-size: 1rem;
     width: 200px;
+    text-align: center;
   }
 
   .apod-content{

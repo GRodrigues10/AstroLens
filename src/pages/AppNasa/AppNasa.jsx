@@ -30,6 +30,10 @@ function AppNasa() {
   const [data, setData] = useState(null);
   const [imageUrl, setImageUrl] = useState(earthImg);
   const [apodData, setApodData] = useState(null);
+  const [cme, setCme] = useState("");
+  const [speed, setSpeed] = useState(null);
+  const [flareSolar, setFlareSolar] = useState("");
+  const [geomagneticStormLinks, setGeomagneticStormLinks] = useState([]);
 
   const planetsImgs = {
     earth: earthImg,
@@ -142,16 +146,110 @@ function AppNasa() {
     setApodData(response);
   };
 
-  const temp = async () => {
-    const dataTemp = await fetch(
-      `https://kauai.ccmc.gsfc.nasa.gov/DONKI/WS/get/CME?startDate=YYYY-MM-DD&endDate=YYYY-MM-DD`
-    );
-    const response = await dataTemp.json();
-    console.log(response);
+  const formatISODate = (isoString) => {
+    if (!isoString) return "";
+    const date = new Date(isoString);
+    const day = String(date.getDate()).padStart(2, "0");
+    const month = String(date.getMonth() + 1).padStart(2, "0");
+    const year = date.getFullYear();
+    const hours = String(date.getHours()).padStart(2, "0");
+    const minutes = String(date.getMinutes()).padStart(2, "0");
+    return `${day}/${month}/${year} ${hours}:${minutes}`;
   };
-  temp()
+
+  const getFormattedDate = (date) => {
+    return date.toISOString().split("T")[0]; // yyyy-MM-dd
+  };
+
+  const temp = async () => {
+    try {
+      const hoje = new Date();
+      const seteDiasAtras = new Date();
+      seteDiasAtras.setDate(hoje.getDate() - 7);
+
+      const url = `https://kauai.ccmc.gsfc.nasa.gov/DONKI/WS/get/CME?startDate=${getFormattedDate(
+        seteDiasAtras
+      )}&endDate=${getFormattedDate(hoje)}`;
+
+      const response = await fetch(url);
+      const data = await response.json();
+
+      if (data.length > 0) {
+        setCme(formatISODate(data[0].startTime));
+        if (data[1] && data[1].cmeAnalyses && data[1].cmeAnalyses[0]) {
+          setSpeed(data[1].cmeAnalyses[0].speed);
+        } else if (data[0].cmeAnalyses && data[0].cmeAnalyses[0]) {
+          setSpeed(data[0].cmeAnalyses[0].speed);
+        } else {
+          setSpeed(null);
+        }
+      } else {
+        setCme("Nenhum CME recente");
+        setSpeed(null);
+      }
+    } catch (error) {
+      console.error("Erro ao buscar CME:", error);
+      setCme("Erro ao carregar CME");
+      setSpeed(null);
+    }
+  };
+
+  const fetchSolarFlares = async () => {
+    try {
+      const hoje = new Date();
+      const seteDiasAtras = new Date();
+      seteDiasAtras.setDate(hoje.getDate() - 7);
+
+      const url = `https://kauai.ccmc.gsfc.nasa.gov/DONKI/WS/get/FLR?startDate=${getFormattedDate(
+        seteDiasAtras
+      )}&endDate=${getFormattedDate(hoje)}`;
+
+      const response = await fetch(url);
+      if (!response.ok) {
+        throw new Error("Erro ao buscar dados de flare solar");
+      }
+      const data = await response.json();
+
+      console.log("Dados de flare solar:", data);
+      setFlareSolar(data);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  const fetchGeomagneticStorms = async () => {
+    try {
+      const hoje = new Date();
+      const seteDiasAtras = new Date();
+      seteDiasAtras.setDate(hoje.getDate() - 7);
+
+      const url = `https://kauai.ccmc.gsfc.nasa.gov/DONKI/WS/get/GST?startDate=${getFormattedDate(
+        seteDiasAtras
+      )}&endDate=${getFormattedDate(hoje)}`;
+
+      const response = await fetch(url);
+      if (!response.ok) throw new Error("Erro ao buscar tempestades geomagnéticas");
+
+      const data = await response.json();
+
+      if (data.length > 0 && data[0].sentNotifications && data[0].sentNotifications.length > 0) {
+        // Pega o último alerta (mais recente)
+        const lastNotification = data[0].sentNotifications.slice(-1)[0];
+        setGeomagneticStormLinks([lastNotification]); // só um link
+      } else {
+        setGeomagneticStormLinks([]);
+      }
+    } catch (error) {
+      console.error(error);
+      setGeomagneticStormLinks([]);
+    }
+  };
+
   useEffect(() => {
     apod();
+    temp();
+    fetchSolarFlares();
+    fetchGeomagneticStorms();
   }, []);
 
   return (
@@ -273,7 +371,6 @@ function AppNasa() {
               <img src={img7} alt="Imagem 7" className="img7" />
               <img src={img8} alt="Imagem 8" className="img8" />
               <img src={img9} alt="Imagem 9" className="img9" />
-              {/* Se quiser, pode adicionar mais imagens aqui */}
             </div>
             <button className="button-gallery" onClick={seeMore}>
               Ver mais
@@ -315,27 +412,48 @@ function AppNasa() {
           <div className="tab-content4">
             <h2>Previsão Espacial</h2>
             <div className="cme">
-              <p><strong>Último CME observado</strong></p>
-              <p>2024-04-22</p>
+              <p>
+                <strong>Último CME observado</strong>
+              </p>
+              <p>{cme}</p>
             </div>
 
-             <div className="velocidade">
-              <p><strong>Velocidade</strong></p>
-              <p>650 km/s</p>
+            <div className="velocidade">
+              <p>
+                <strong>Velocidade do CME</strong>
+              </p>
+              <p>{speed ? `${speed.toFixed(0)} km/s` : "N/D"}</p>
             </div>
 
-
-             <div className="flare-solar">
-              <p><strong>Último flare solar</strong></p>
-              <p>2024-04-23</p>
+            <div className="flare-solar">
+              <p>
+                <strong>Último flare solar</strong>
+              </p>
+              <p>
+                {flareSolar.length > 0
+                  ? formatISODate(flareSolar[0].beginTime)
+                  : "Nenhum flare recente"}
+              </p>
             </div>
 
-
-             <div className="tempestade">
-              <p><strong>Tempestade geomagnética</strong></p>
-              <p>Moderada</p>
+            <div className="tempestade">
+              <p>
+                <strong>Tempestade geomagnética</strong>
+              </p>
+              {geomagneticStormLinks.length > 0 ? (
+                <p>
+                  <a style={{textDecoration:'none', color:'white'}}
+                    href={geomagneticStormLinks[0].messageURL}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    Ver alerta {geomagneticStormLinks[0].messageID}
+                  </a>
+                </p>
+              ) : (
+                <p>Nenhum alerta disponível</p>
+              )}
             </div>
-            
           </div>
         )}
       </div>
