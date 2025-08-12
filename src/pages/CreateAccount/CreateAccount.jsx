@@ -7,6 +7,8 @@ import personImg from "../../assets/person.png";
 import { useNavigate } from "react-router-dom";
 
 function CreateAccount() {
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
@@ -17,7 +19,26 @@ function CreateAccount() {
   const [birthYear, setBirthYear] = useState("");
 
   const navigate = useNavigate();
+
   const register = () => {
+    if (
+      !email.trim() ||
+      !password.trim() ||
+      !confirmPassword.trim() ||
+      !firstName.trim() ||
+      !lastName.trim() ||
+      !birthDay.trim() ||
+      !birthMonth.trim() ||
+      !birthYear.trim()
+    ) {
+      alert("Preencha todos os campos!");
+      return;
+    }
+
+    if(password !== confirmPassword){
+      alert('As senhas não são iguais!');
+      return;
+    }
     navigate("/");
   };
 
@@ -62,11 +83,21 @@ function CreateAccount() {
         <div className="name">
           <div className="input-icon">
             <img src={personImg} alt="Nome" />
-            <input type="text" placeholder="Nome" />
+            <input
+              type="text"
+              placeholder="Nome"
+              value={firstName}
+              onChange={(e) => setFirstName(e.target.value)}
+            />
           </div>
           <div className="input-icon">
             <img src={personImg} alt="Sobrenome" />
-            <input type="text" placeholder="Sobrenome" />
+            <input
+              type="text"
+              placeholder="Sobrenome"
+              value={lastName}
+              onChange={(e) => setLastName(e.target.value)}
+            />
           </div>
         </div>
 
