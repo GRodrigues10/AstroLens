@@ -245,6 +245,15 @@ function AppNasa() {
     }
   };
 
+ const maxLength = 130;
+const shortExplanation =
+  apodData && apodData.explanation
+    ? apodData.explanation.length > maxLength
+      ? apodData.explanation.slice(0, maxLength) + "..."
+      : apodData.explanation
+    : "";
+
+
   useEffect(() => {
     apod();
     temp();
@@ -397,10 +406,11 @@ function AppNasa() {
                     height="400px"
                   />
                 ) : null}
-                <p>{apodData.explanation}</p>
+                <p>{shortExplanation}</p>
                 <p>
                   <small>{apodData.date}</small>
                 </p>
+                <button>Ler mais...</button>
               </div>
             ) : (
               <p>Carregando APOD...</p>

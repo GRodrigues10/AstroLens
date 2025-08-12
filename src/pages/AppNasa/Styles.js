@@ -242,12 +242,12 @@ export const StylesAppNasa = styled.div`
   }
 
   .tab-content3 h2{
-    font-size: 1.1rem;
-    width: 200px;
+    font-size: 1.3rem;
+    width: 220px;
   }
 
     .tab-content3 h3{
-    font-size: 1rem;
+    font-size: 1.1rem;
     width: 200px;
     text-align: center;
   }
@@ -266,9 +266,15 @@ export const StylesAppNasa = styled.div`
 
   }
 
+  
+
+  .apod-content button{
+    margin-top: 10px;
+  }
+
   .apod-content p{
     margin-top: 10px;
-    font-size: 0.58rem;
+    font-size: 0.78rem;
   }
 
   .tab-content4{
@@ -413,7 +419,7 @@ export const StylesAppNasa = styled.div`
 
   .apod-content p{
     margin-top: 10px;
-    font-size: 0.7rem;
+    font-size: 0.9rem;
   }
 
    .tab-content4 h2{
@@ -513,6 +519,20 @@ export const StylesAppNasa = styled.div`
       font-size: 1.3rem;
     }
 
+    
+  .tab-content3 h2{
+    width: 320px;
+      font-size: 1.4rem;
+  }
+
+  .tab-content3 h3{
+    font-size: 1.3rem;
+  }
+
+  .tab-content3 p{
+    font-size: 1rem;
+  }
+
       .tab-content4 h2{
     font-size: 1.6rem;
     text-align: start;
@@ -521,6 +541,7 @@ export const StylesAppNasa = styled.div`
   .tab-content4 p{
     font-size: 1.3rem;
   }
+
 
     
 
@@ -569,11 +590,15 @@ export const StylesAppNasa = styled.div`
 .img9{
   display: flex;
 }
+.tab-content3 button{
+  font-size: 1rem;
+}
 
   .tab-content4 > div{
     padding: 15px !important ;
   }
     
+
 
     img{
         width: 300px;
@@ -640,23 +665,26 @@ export const StylesAppNasa = styled.div`
 }
 
 .tab-content3 h2{
-    font-size: 1.4rem;
+    font-size: 1.45rem;
     width: 400px;
   }
 
   .tab-content3 h3{
-    font-size: 1.3rem;
+    font-size: 1.35rem;
     width: 300px !;
     text-align: center;
   }
 
-
+.tab-content3 button{
+  margin-top: 20px;
+  font-size: 1.2rem;
+}
 
 
 
   .apod-content p{
     margin-top: 10px;
-    font-size: 0.8rem;
+    font-size: 1rem;
   }
 
     .exit{
