@@ -89,6 +89,7 @@ function AppNasa() {
     plutão: "pluto",
   };
 
+
   async function apiData() {
     try {
       const nomeBusca = search.trim().toLowerCase();
@@ -126,6 +127,11 @@ function AppNasa() {
 
   // Preparar dados das luas com segurança
   const luas = data?.moons || [];
+
+
+  const seeMore = () => {
+    navigate('/gallery-nasa')
+  }
 
   return (
     <StylesAppNasa>
@@ -225,6 +231,7 @@ function AppNasa() {
       {activeTab === "galeria" && (
   <div className="tab-content2">
     <h2>Galeria Espacial</h2>
+
     <div className="gallery">
       <img src={img1} alt="Imagem 1" />
       <img src={img2} alt="Imagem 2" />
@@ -237,7 +244,7 @@ function AppNasa() {
       <img src={img9} alt="Imagem 9" className="img9"/>
       {/* Se quiser, pode adicionar mais imagens aqui */}
     </div>
-        <button className="button-gallery">Ver mais</button>
+        <button className="button-gallery" onClick={seeMore}>Ver mais</button>
 
   </div>
 )}
