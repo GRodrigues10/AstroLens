@@ -8,6 +8,7 @@ import uranoImg from "../../assets/urano.png";
 import saturnoImg from "../../assets/saturno2.png";
 import mercurioImg from "../../assets/mercurio.png";
 import venusImg from "../../assets/venus.png";
+import imgUnknown from '../../assets/unknown.png'
 import plutaoImg from "../../assets/plutao.png";
 import img1 from "../../assets/img-teste.jpg";
 import img2 from "../../assets/img-teste1.jpg";
@@ -111,7 +112,7 @@ const APIKEY = import.meta.env.VITE_APIKEY;
       if (planetsImgs[idAPI]) {
         setImageUrl(planetsImgs[idAPI]);
       } else {
-        setImageUrl(earthImg); // fallback
+        setImageUrl(imgUnknown); // fallback
       }
 
       const url = `https://api.le-systeme-solaire.net/rest/bodies/${idAPI}`;
