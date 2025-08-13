@@ -365,7 +365,7 @@ const APIKEY = import.meta.env.VITE_APIKEY;
                 </button>
               </div>
             ) : (
-              <p>Nenhum dado para mostrar. Faça uma busca.</p>
+              <p className="data-not-found">Nenhum dado para mostrar. Faça uma busca.</p>
             )}
 
             <div className="img">

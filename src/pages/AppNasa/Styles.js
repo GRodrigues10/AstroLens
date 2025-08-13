@@ -354,6 +354,10 @@ export const StylesAppNasa = styled.div`
     align-items: center;
   }
 
+  .data-not-found{
+    margin-top: 20px;
+  }
+
   .exit{
     display: none;
   }
@@ -545,7 +549,9 @@ export const StylesAppNasa = styled.div`
     font-size: 1.3rem;
   }
 
-
+ .data-not-found{
+    margin-top: 10px;
+  }
     
 
     .exit{
