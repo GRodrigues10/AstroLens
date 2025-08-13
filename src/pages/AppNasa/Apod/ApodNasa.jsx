@@ -3,7 +3,7 @@ import { StylesApodNasa } from "./Styles";
 import { useNavigate } from "react-router-dom";
 
 function ApodNasa() {
-  const APIKEY = "QH7sKVDhwKAMTjEYAh8UdhjeAfN78CDplRi9Savj";
+  const APIKEY = import.meta.env.VITE_APIKEY;
   const [apodData, setApodData] = useState(null);
   const [isContentLoaded, setIsContentLoaded] = useState(false);
   const navigate = useNavigate();

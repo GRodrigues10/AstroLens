@@ -21,9 +21,11 @@ import img9 from "../../assets/img-teste9.jpg";
 
 import { useNavigate } from "react-router-dom";
 
-const APIKEY = "QH7sKVDhwKAMTjEYAh8UdhjeAfN78CDplRi9Savj";
+
+
 
 function AppNasa() {
+const APIKEY = import.meta.env.VITE_APIKEY;
   const [activeTab, setActiveTab] = useState(null);
   const [menuOpen, setMenuOpen] = useState(false);
   const [search, setSearch] = useState("");
