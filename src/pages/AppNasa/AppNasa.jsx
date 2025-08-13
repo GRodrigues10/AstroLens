@@ -228,11 +228,16 @@ function AppNasa() {
       )}&endDate=${getFormattedDate(hoje)}`;
 
       const response = await fetch(url);
-      if (!response.ok) throw new Error("Erro ao buscar tempestades geomagnéticas");
+      if (!response.ok)
+        throw new Error("Erro ao buscar tempestades geomagnéticas");
 
       const data = await response.json();
 
-      if (data.length > 0 && data[0].sentNotifications && data[0].sentNotifications.length > 0) {
+      if (
+        data.length > 0 &&
+        data[0].sentNotifications &&
+        data[0].sentNotifications.length > 0
+      ) {
         // Pega o último alerta (mais recente)
         const lastNotification = data[0].sentNotifications.slice(-1)[0];
         setGeomagneticStormLinks([lastNotification]); // só um link
@@ -245,14 +250,17 @@ function AppNasa() {
     }
   };
 
- const maxLength = 130;
-const shortExplanation =
-  apodData && apodData.explanation
-    ? apodData.explanation.length > maxLength
-      ? apodData.explanation.slice(0, maxLength) + "..."
-      : apodData.explanation
-    : "";
+  //  const maxLength = 130;
+  // const shortExplanation =
+  //   apodData && apodData.explanation
+  //     ? apodData.explanation.length > maxLength
+  //       ? apodData.explanation.slice(0, maxLength) + "..."
+  //       : apodData.explanation
+  //     : "";
 
+  const seeMoreApod = () => {
+    navigate("/apod-nasa");
+  };
 
   useEffect(() => {
     apod();
@@ -406,11 +414,11 @@ const shortExplanation =
                     height="400px"
                   />
                 ) : null}
-                <p>{shortExplanation}</p>
-                <p>
+                {/* <p>{shortExplanation}</p> */}
+                {/* <p>
                   <small>{apodData.date}</small>
-                </p>
-                <button>Ler mais...</button>
+                </p> */}
+                <button onClick={seeMoreApod}>Ver Explicação</button>
               </div>
             ) : (
               <p>Carregando APOD...</p>
@@ -452,7 +460,8 @@ const shortExplanation =
               </p>
               {geomagneticStormLinks.length > 0 ? (
                 <p>
-                  <a style={{textDecoration:'none', color:'white'}}
+                  <a
+                    style={{ textDecoration: "none", color: "white" }}
                     href={geomagneticStormLinks[0].messageURL}
                     target="_blank"
                     rel="noreferrer"

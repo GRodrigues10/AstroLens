@@ -252,6 +252,7 @@ export const StylesAppNasa = styled.div`
     text-align: center;
   }
 
+
   .apod-content{
     display: flex;
     flex-direction: column;
@@ -269,7 +270,9 @@ export const StylesAppNasa = styled.div`
   
 
   .apod-content button{
-    margin-top: 10px;
+    padding: 10px;
+    font-size: 1.05rem;
+    margin-top: 30px;
   }
 
   .apod-content p{
@@ -598,6 +601,11 @@ export const StylesAppNasa = styled.div`
     padding: 15px !important ;
   }
     
+   .apod-content button{
+    padding: 10px;
+    font-size: 1.05rem;
+    margin-top: 15px;
+  }
 
 
     img{
@@ -678,6 +686,7 @@ export const StylesAppNasa = styled.div`
 .tab-content3 button{
   margin-top: 20px;
   font-size: 1.2rem;
+  margin-top: 35px;
 }
 
 

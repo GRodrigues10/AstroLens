@@ -94,6 +94,8 @@ export const StylesGallery = styled.div`
     &:hover {
       background-color: #2467ca;
     }
+
+  
   }
 
   @media screen and (min-width: 530px) {
