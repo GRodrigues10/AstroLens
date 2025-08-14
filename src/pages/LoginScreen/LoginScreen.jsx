@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { StylesLoginScreen } from "./Styles";
 import earthVideo from "../../assets/earth.mp4";
 import { useNavigate } from "react-router-dom";
@@ -11,23 +11,43 @@ function LoginScreen() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
+  // Verifica se já existe usuário logado
+  useEffect(() => {
+    const loggedUser = localStorage.getItem("usuarioLogado");
+    if (loggedUser) {
+      navigate('/app-nasa'); 
+    }
+  }, [navigate]);
 
   const enter = () => {
-    if(!email.trim() || !password.trim()){
+    if (!email.trim() || !password.trim()) {
       alert('Preencha todos os campos!');
       return;
     }
-    navigate('/app-nasa');
-  }
 
+    const storedUsers = JSON.parse(localStorage.getItem("usuarios")) || [];
+    const storedUser = storedUsers.find(user => user.email === email && user.password === password);
+
+    if (storedUser) {
+      // Cria uma cópia segura do usuário sem a senha
+      const safeUser = { ...storedUser };
+      delete safeUser.password;
+
+      localStorage.setItem("usuarioLogado", JSON.stringify(safeUser));
+      navigate('/app-nasa');
+    } else {
+      alert('Email ou senha incorretos!');
+    }
+  };
 
   const forgotPassword = () => {
     navigate("/forgot-password");
   };
 
   const createAccount = () => {
-    navigate('/create-account')
+    navigate('/create-account');
   }
+
   return (
     <StylesLoginScreen>
       <div className="video">
@@ -39,7 +59,6 @@ function LoginScreen() {
       <div className="content">
         <h1>AstroLens</h1>
 
-        {/* Input email com ícone */}
         <div className="input-wrapper">
           <img src={emailImg} alt="email icon" className="input-icon" />
           <input
@@ -52,7 +71,6 @@ function LoginScreen() {
           />
         </div>
 
-        {/* Input senha com ícone e botão de mostrar senha */}
         <div className="input-wrapper">
           <img src={passwordImg} alt="password icon" className="input-icon" />
           <input

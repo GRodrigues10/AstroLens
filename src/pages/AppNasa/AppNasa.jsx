@@ -83,9 +83,11 @@ function AppNasa() {
     setMenuOpen(false);
   }
 
-  function exit() {
-    navigate("/");
-  }
+ function exit() {
+  localStorage.removeItem("usuarioLogado"); 
+   alert("Você saiu com sucesso!"); 
+  navigate("/"); 
+}
 
   const nomePTtoID = {
     terra: "earth",

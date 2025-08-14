@@ -35,38 +35,35 @@ function CreateAccount() {
       return;
     }
 
-    if(password !== confirmPassword){
-      alert('As senhas não são iguais!');
+    if (password !== confirmPassword) {
+      alert("As senhas não são iguais!");
       return;
     }
-    navigate("/");
+
+    const newUser = { firstName, lastName, email, password, birthDay, birthMonth, birthYear };
+
+    const usersList = JSON.parse(localStorage.getItem("usuarios")) || [];
+    const emailExists = usersList.some(user => user.email === email);
+
+    if (emailExists) {
+      alert("Email já cadastrado!");
+      return;
+    }
+
+    usersList.push(newUser);
+    localStorage.setItem("usuarios", JSON.stringify(usersList));
+
+    alert("Cadastro realizado com sucesso!");
+    navigate("/"); // volta para login
   };
 
-  // Lista de dias (1 a 31)
   const days = Array.from({ length: 31 }, (_, i) => i + 1);
-
-  // Lista de meses
   const months = [
-    "Janeiro",
-    "Fevereiro",
-    "Março",
-    "Abril",
-    "Maio",
-    "Junho",
-    "Julho",
-    "Agosto",
-    "Setembro",
-    "Outubro",
-    "Novembro",
-    "Dezembro",
+    "Janeiro","Fevereiro","Março","Abril","Maio","Junho",
+    "Julho","Agosto","Setembro","Outubro","Novembro","Dezembro"
   ];
-
-  // Lista de anos (de 1900 até o ano atual)
   const currentYear = new Date().getFullYear();
-  const years = Array.from(
-    { length: currentYear - 1900 + 1 },
-    (_, i) => currentYear - i
-  );
+  const years = Array.from({ length: currentYear - 1900 + 1 }, (_, i) => currentYear - i);
 
   return (
     <StylesCreateAccount>
@@ -79,7 +76,6 @@ function CreateAccount() {
       <div className="content">
         <h1>Crie sua Conta</h1>
 
-        {/* Nome e Sobrenome com ícone */}
         <div className="name">
           <div className="input-icon">
             <img src={personImg} alt="Nome" />
@@ -101,7 +97,6 @@ function CreateAccount() {
           </div>
         </div>
 
-        {/* Email com ícone */}
         <div className="input-icon">
           <img src={emailImg} alt="Email" />
           <input
@@ -114,7 +109,6 @@ function CreateAccount() {
           />
         </div>
 
-        {/* Senha com ícone */}
         <div className="input-icon password-field">
           <img src={passwordImg} alt="Senha" />
           <input
@@ -126,7 +120,6 @@ function CreateAccount() {
             onChange={(e) => setPassword(e.target.value)}
           />
           <span
-            type="button"
             className="toggle-password"
             onClick={() => setShowPassword(!showPassword)}
           >
@@ -134,7 +127,6 @@ function CreateAccount() {
           </span>
         </div>
 
-        {/* Confirmar Senha com ícone */}
         <div className="input-icon password-field">
           <img src={passwordImg} alt="Confirmar senha" />
           <input
@@ -146,7 +138,6 @@ function CreateAccount() {
             onChange={(e) => setConfirmPassword(e.target.value)}
           />
           <span
-            type="button"
             className="toggle-password"
             onClick={() => setConfirmShowPassword(!confirmShowPassword)}
           >
@@ -154,46 +145,24 @@ function CreateAccount() {
           </span>
         </div>
 
-        {/* Data de nascimento */}
         <div className="birth">
           <div className="text">
             <h2>Data de Nascimento</h2>
           </div>
           <div className="data">
-            <select
-              value={birthDay}
-              onChange={(e) => setBirthDay(e.target.value)}
-            >
+            <select value={birthDay} onChange={(e) => setBirthDay(e.target.value)}>
               <option value="">Dia</option>
-              {days.map((day) => (
-                <option key={day} value={day}>
-                  {day}
-                </option>
-              ))}
+              {days.map(day => <option key={day} value={day}>{day}</option>)}
             </select>
 
-            <select
-              value={birthMonth}
-              onChange={(e) => setBirthMonth(e.target.value)}
-            >
+            <select value={birthMonth} onChange={(e) => setBirthMonth(e.target.value)}>
               <option value="">Mês</option>
-              {months.map((month, index) => (
-                <option key={index} value={index + 1}>
-                  {month}
-                </option>
-              ))}
+              {months.map((month,index) => <option key={index} value={index+1}>{month}</option>)}
             </select>
 
-            <select
-              value={birthYear}
-              onChange={(e) => setBirthYear(e.target.value)}
-            >
+            <select value={birthYear} onChange={(e) => setBirthYear(e.target.value)}>
               <option value="">Ano</option>
-              {years.map((year) => (
-                <option key={year} value={year}>
-                  {year}
-                </option>
-              ))}
+              {years.map(year => <option key={year} value={year}>{year}</option>)}
             </select>
           </div>
         </div>
