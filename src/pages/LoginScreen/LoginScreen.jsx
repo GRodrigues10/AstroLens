@@ -37,7 +37,7 @@ function LoginScreen() {
       </div>
 
       <div className="content">
-        <h1>AstroView</h1>
+        <h1>AstroLens</h1>
 
         {/* Input email com ícone */}
         <div className="input-wrapper">
