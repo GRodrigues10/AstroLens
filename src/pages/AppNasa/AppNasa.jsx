@@ -26,7 +26,7 @@ import { useNavigate } from "react-router-dom";
 
 
 function AppNasa() {
-const APIKEY = import.meta.env.VITE_APIKEY;
+  const APIKEY = import.meta.env.VITE_APIKEY;
   const [activeTab, setActiveTab] = useState(null);
   const [menuOpen, setMenuOpen] = useState(false);
   const [search, setSearch] = useState("");
@@ -37,7 +37,7 @@ const APIKEY = import.meta.env.VITE_APIKEY;
   const [speed, setSpeed] = useState(null);
   const [flareSolar, setFlareSolar] = useState("");
   const [geomagneticStormLinks, setGeomagneticStormLinks] = useState([]);
-
+  
   const planetsImgs = {
     earth: earthImg,
     mars: marsImg,

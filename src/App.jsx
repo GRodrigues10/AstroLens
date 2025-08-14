@@ -14,7 +14,7 @@ import ApodNasa from "./pages/AppNasa/Apod/ApodNasa";
 function App() {
   return (
     <>
-      <Router basename="/AstroView">
+      <Router basename="/AstroLens">
         <Routes>
           <Route path="/" element={<LoginScreen />} />
           <Route path="/forgot-password" element={<ForgotPassword />} />
