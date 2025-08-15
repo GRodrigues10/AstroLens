@@ -460,7 +460,8 @@ Please change the parent <Route path="${H}"> to <Route path="${H==="/"?"*":`${H}
     margin-top: 10px;
     border: 2px solid #7FFFD4;
     border-radius: 5px;
-
+    height: 200px;
+    width: 250px;
   }
 
   
@@ -677,7 +678,13 @@ Please change the parent <Route path="${H}"> to <Route path="${H==="/"?"*":`${H}
       width: 100px;
       z-index: 5;
     }
-
+ .apod-content img{
+    margin-top: 20px;
+    border: 2px solid #7FFFD4;
+    border-radius: 5px;
+    height: 230px;
+    width: 320px;
+  }
     
 
 
@@ -1535,7 +1542,7 @@ Please change the parent <Route path="${H}"> to <Route path="${H==="/"?"*":`${H}
       font-size: 1.5rem;
     }
     .apod-content img {
-      height: 500px;
+      max-height: 300px !;
     }
     .apod-content p {
       font-size: 1.3rem;
