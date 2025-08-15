@@ -264,7 +264,8 @@ export const StylesAppNasa = styled.div`
     margin-top: 10px;
     border: 2px solid #7FFFD4;
     border-radius: 5px;
-
+    height: 200px;
+    width: 250px;
   }
 
   
@@ -481,7 +482,13 @@ export const StylesAppNasa = styled.div`
       width: 100px;
       z-index: 5;
     }
-
+ .apod-content img{
+    margin-top: 20px;
+    border: 2px solid #7FFFD4;
+    border-radius: 5px;
+    height: 230px;
+    width: 320px;
+  }
     
 
 

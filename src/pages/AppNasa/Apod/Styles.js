@@ -131,7 +131,7 @@ export const StylesApodNasa = styled.div`
       font-size: 1.5rem;
     }
     .apod-content img {
-      height: 500px;
+      max-height: 300px !;
     }
     .apod-content p {
       font-size: 1.3rem;
