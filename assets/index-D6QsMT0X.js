@@ -213,6 +213,7 @@ Please change the parent <Route path="${H}"> to <Route path="${H==="/"?"*":`${H}
     color: white;
     font-weight: bold;
     margin-bottom: 30px;
+    text-align: center;
   }
 
   .content {
@@ -222,11 +223,11 @@ Please change the parent <Route path="${H}"> to <Route path="${H==="/"?"*":`${H}
     height: 500px;
     padding: 20px;
     border-radius: 10px;
-    color: #E5E5E5;
+    color: #e5e5e5;
     position: relative;
     display: flex;
     flex-direction: column;
-    border: 1px solid  #111b2bff;
+    border: 1px solid #111b2bff;
   }
 
   /* Botão hamburguer no topo direito da content */
@@ -271,7 +272,7 @@ Please change the parent <Route path="${H}"> to <Route path="${H==="/"?"*":`${H}
   }
 
   .aba-item.active {
-    background-color: #3B6CB7;
+    background-color: #3b6cb7;
     font-weight: bold;
   }
 
@@ -297,7 +298,7 @@ Please change the parent <Route path="${H}"> to <Route path="${H==="/"?"*":`${H}
   }
 
   .menu-desktop .aba-item.active {
-    background-color: #3B6CB7;
+    background-color: #3b6cb7;
     font-weight: bold;
   }
 
@@ -310,7 +311,6 @@ Please change the parent <Route path="${H}"> to <Route path="${H==="/"?"*":`${H}
   .content .input {
     display: flex;
     width: 100%;
-   
   }
 
   .content input {
@@ -320,25 +320,21 @@ Please change the parent <Route path="${H}"> to <Route path="${H==="/"?"*":`${H}
     border-radius: 4px;
     padding: 10px;
     outline: none;
-   
   }
 
   .content button {
-    background-color: #3B6CB7;
+    background-color: #3b6cb7;
     color: white;
     border: none;
     padding: 6px 12px;
     margin-left: 8px;
     border-radius: 4px;
     cursor: pointer;
-    transition: .4s ease;
+    transition: 0.4s ease;
 
-    &:hover{
-    background-color: #2a68c5ff;
-
+    &:hover {
+      background-color: #2a68c5ff;
     }
-
-    
   }
 
   .row {
@@ -358,146 +354,135 @@ Please change the parent <Route path="${H}"> to <Route path="${H==="/"?"*":`${H}
     background: transparent !important;
   }
 
-  .tab-content2{
+  .tab-content2 {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-items: center;
-   
   }
 
-  .tab-content2 h2{
+  .tab-content2 h2 {
     align-self: flex-start;
-    
   }
 
   .tab-content2 .gallery {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 16px;       /* espaçamento entre as imagens */
-  justify-content: center; /* centraliza as imagens na linha */
-  padding: 10px 0;
-}
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px; /* espaçamento entre as imagens */
+    justify-content: center; /* centraliza as imagens na linha */
+    padding: 10px 0;
+  }
 
-.tab-content2 .gallery img {
-  width: 80%;
-  max-width: 250px;    /* largura fixa pra manter padrão */
-  height: 160px;   /* altura fixa pra manter padrão */
-  object-fit: cover; /* garante que a imagem preencha o espaço sem distorcer */
-  border-radius: 8px;
-  box-shadow: 0 0 8px rgba(0,0,0,0.3);
-  cursor: pointer; /* fica interativo pra usuário */
-  transition: transform 0.3s ease;
-}
+  .tab-content2 .gallery img {
+    width: 80%;
+    max-width: 250px; /* largura fixa pra manter padrão */
+    height: 160px; /* altura fixa pra manter padrão */
+    object-fit: cover; /* garante que a imagem preencha o espaço sem distorcer */
+    border-radius: 8px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+    cursor: pointer; /* fica interativo pra usuário */
+    transition: transform 0.3s ease;
+  }
 
-.img3{
-  display: none;
-}
+  .img3 {
+    display: none;
+  }
 
-.img4{
-  display: none;
-}
+  .img4 {
+    display: none;
+  }
 
-.img5{
-  display: none;
-}
+  .img5 {
+    display: none;
+  }
 
-.img6{
-  display: none;
-}
+  .img6 {
+    display: none;
+  }
 
-.img7{
-  display: none;
-}
+  .img7 {
+    display: none;
+  }
 
-.img8{
-  display: none;
-}
+  .img8 {
+    display: none;
+  }
 
-.img9{
-  display: none;
-}
+  .img9 {
+    display: none;
+  }
 
+  .tab-content2 .gallery img:hover {
+    transform: scale(1.05); /* efeito hover suave */
+  }
 
-
-.tab-content2 .gallery img:hover {
-  transform: scale(1.05); /* efeito hover suave */
-}
-
-.tab-content2  .button-gallery {
+  .tab-content2 .button-gallery {
     font-size: 1.2rem;
     position: relative;
     top: 10px;
     padding: 8px;
     width: 80%;
     max-width: 200px;
-}
+  }
 
   span {
     font-size: 1.1rem;
   }
 
-  .tab-content3 h2{
+  .tab-content3 h2 {
     font-size: 1.3rem;
     width: 220px;
   }
 
-    .tab-content3 h3{
+  .tab-content3 h3 {
     font-size: 1.1rem;
     width: 200px;
     text-align: center;
   }
 
-
-  .apod-content{
+  .apod-content {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
   }
 
-  .apod-content img{
+  .apod-content img {
     margin-top: 10px;
-    border: 2px solid #7FFFD4;
+    border: 2px solid #7fffd4;
     border-radius: 5px;
     height: 200px;
     width: 250px;
   }
 
-  
-
-  .apod-content button{
+  .apod-content button {
     padding: 10px;
     font-size: 1.05rem;
     margin-top: 30px;
   }
 
-  .apod-content p{
+  .apod-content p {
     margin-top: 10px;
     font-size: 0.78rem;
   }
 
-  .tab-content4{
+  .tab-content4 {
     display: flex;
     flex-direction: column;
-   
-    
+
     gap: 20px;
     font-size: 1.1rem;
-  
   }
-
 
   .tab-content4 > div {
     cursor: pointer;
-    transition: .4s ease ;
-    &:hover{
+    transition: 0.4s ease;
+    &:hover {
       transform: scale(1.025);
     }
   }
- 
 
-  .tab-content4 .cme{
+  .tab-content4 .cme {
     display: flex;
     padding: 10px;
     gap: 10px;
@@ -507,39 +492,9 @@ Please change the parent <Route path="${H}"> to <Route path="${H==="/"?"*":`${H}
     justify-content: space-between;
     align-items: center;
     width: 100%;
-
   }
 
-
-  .tab-content4 .velocidade{
-    display: flex;
-    padding: 10px;
-    gap: 10px;
-     background-color: #617aacbd;
-    border-radius: 5px;
-    border: 2px solid black;
-    width: 100%;
-    justify-content: space-between;
-    align-items: center;
-
-  }
-
-
-  .tab-content4 .flare-solar{
-    display: flex;
-    padding: 10px;
-    gap: 10px;
-     background-color: #617aacbd;
-    border-radius: 5px;
-    border: 2px solid black;
-    width: 100%;
-    justify-content: space-between;
-    align-items: center;
-
-  }
-
-
-  .tab-content4 .tempestade{
+  .tab-content4 .velocidade {
     display: flex;
     padding: 10px;
     gap: 10px;
@@ -551,89 +506,106 @@ Please change the parent <Route path="${H}"> to <Route path="${H==="/"?"*":`${H}
     align-items: center;
   }
 
-  .data-not-found{
+  .tab-content4 .flare-solar {
+    display: flex;
+    padding: 10px;
+    gap: 10px;
+    background-color: #617aacbd;
+    border-radius: 5px;
+    border: 2px solid black;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .tab-content4 .tempestade {
+    display: flex;
+    padding: 10px;
+    gap: 10px;
+    background-color: #617aacbd;
+    border-radius: 5px;
+    border: 2px solid black;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .data-not-found {
     margin-top: 20px;
   }
 
-  .exit{
+  .exit {
     display: none;
   }
 
-  
+  @media screen and (min-width: 530px) {
+    .tab-content2 .gallery {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
 
-  @media screen and (min-width:530px) {
-        
-.tab-content2 .gallery{
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+    .tab-content2 .gallery img {
+      width: 80%;
+      max-width: 180px; /* largura fixa pra manter padrão */
+      height: 150px; /* altura fixa pra manter padrão */
+      object-fit: cover; /* garante que a imagem preencha o espaço sem distorcer */
+      border-radius: 8px;
+      box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+      cursor: pointer; /* fica interativo pra usuário */
+      transition: transform 0.3s ease;
+    }
 
-}
+    .img3 {
+      display: flex;
+    }
 
-.tab-content2 .gallery img {
-  width: 80%;
-  max-width: 180px;    /* largura fixa pra manter padrão */
-  height: 150px;   /* altura fixa pra manter padrão */
-  object-fit: cover; /* garante que a imagem preencha o espaço sem distorcer */
-  border-radius: 8px;
-  box-shadow: 0 0 8px rgba(0,0,0,0.3);
-  cursor: pointer; /* fica interativo pra usuário */
-  transition: transform 0.3s ease;
-}
-        
-.img3{
-  display: flex;
-}
+    .img4 {
+      display: flex;
+    }
 
-.img4{
-  display: flex;
-}
+    .img5 {
+      display: none;
+    }
 
-.img5{
-  display: none;
-}
+    .img6 {
+      display: none;
+    }
 
-.img6{
-  display: none;
-}
+    .img7 {
+      display: none;
+    }
 
-.img7{
-  display: none;
-}
+    .img8 {
+      display: none;
+    }
 
-.img8{
-  display: none;
-}
+    .img9 {
+      display: none;
+    }
 
-.img9{
-  display: none;
-}
+    .tab-content3 h2 {
+      font-size: 1.3rem;
+      width: 300px;
+    }
 
+    .tab-content3 h3 {
+      font-size: 1.2rem;
+      width: 300px;
+    }
 
-.tab-content3 h2{
-    font-size: 1.3rem;
-    width: 300px;
-  }
+    .apod-content p {
+      margin-top: 10px;
+      font-size: 0.9rem;
+    }
 
-  .tab-content3 h3{
-    font-size: 1.2rem;
-    width: 300px;
-  }
+    .tab-content4 h2 {
+      font-size: 1.5rem;
+    }
 
-
-  .apod-content p{
-    margin-top: 10px;
-    font-size: 0.9rem;
-  }
-
-   .tab-content4 h2{
-    font-size: 1.5rem;
-  }
-
-  .tab-content4 p{
-    font-size: 1.25rem;
-  }
-
+    .tab-content4 p {
+      font-size: 1.25rem;
+    }
   }
 
   /* Media query para desktop */
@@ -678,48 +650,44 @@ Please change the parent <Route path="${H}"> to <Route path="${H==="/"?"*":`${H}
       width: 100px;
       z-index: 5;
     }
- .apod-content img{
-    margin-top: 20px;
-    border: 2px solid #7FFFD4;
-    border-radius: 5px;
-    height: 230px;
-    width: 320px;
-  }
-    
-
-
-    img{
-        width: 250px;
+    .apod-content img {
+      margin-top: 20px;
+      border: 2px solid #7fffd4;
+      border-radius: 5px;
+      height: 230px;
+      width: 320px;
     }
 
+    img {
+      width: 250px;
+    }
 
     .tab-content2 .gallery img {
-  width: 80%;
-  max-width: 150px;    /* largura fixa pra manter padrão */
-  height: 120px;   /* altura fixa pra manter padrão */
-  object-fit: cover; /* garante que a imagem preencha o espaço sem distorcer */
-  border-radius: 8px;
-  box-shadow: 0 0 8px rgba(0,0,0,0.3);
-  cursor: pointer; /* fica interativo pra usuário */
-  transition: transform 0.3s ease;
-}
+      width: 80%;
+      max-width: 150px; /* largura fixa pra manter padrão */
+      height: 120px; /* altura fixa pra manter padrão */
+      object-fit: cover; /* garante que a imagem preencha o espaço sem distorcer */
+      border-radius: 8px;
+      box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+      cursor: pointer; /* fica interativo pra usuário */
+      transition: transform 0.3s ease;
+    }
 
-    .img6{
-  display:flex;
-}
+    .img6 {
+      display: flex;
+    }
 
-.img7{
-  display: flex;
-}
+    .img7 {
+      display: flex;
+    }
 
-.img8{
-  display: none;
-}
+    .img8 {
+      display: none;
+    }
 
-.img9{
-  display: none;
-}
-
+    .img9 {
+      display: none;
+    }
 
     .data-text h2 {
       font-size: 1.5rem;
@@ -729,55 +697,59 @@ Please change the parent <Route path="${H}"> to <Route path="${H==="/"?"*":`${H}
       font-size: 1.3rem;
     }
 
-    
-  .tab-content3 h2{
-    width: 320px;
+    .tab-content3 h2 {
+      width: 320px;
       font-size: 1.4rem;
-  }
+    }
 
-  .tab-content3 h3{
-    font-size: 1.3rem;
-  }
+    .tab-content3 h3 {
+      font-size: 1.3rem;
+    }
 
-  .tab-content3 p{
-    font-size: 1rem;
-  }
+    .tab-content3 p {
+      font-size: 1rem;
+    }
 
-      .tab-content4 h2{
-    font-size: 1.6rem;
-    text-align: start;
-  }
+    .tab-content4 h2 {
+      font-size: 1.6rem;
+      text-align: start;
+    }
 
-  .tab-content4 p{
-    font-size: 1.3rem;
-  }
+    .tab-content4 p {
+      font-size: 1.3rem;
+    }
 
- .data-not-found{
-    margin-top: 10px;
-  }
-    
+    .data-not-found {
+      margin-top: 10px;
+    }
 
-    .exit{
-        display: flex;
-        margin-top: 50px;
-        width: 100px;
-        align-items: center;
-        justify-content: center;
-        padding: 10px !important;
+    .exit {
+      display: flex;
+      margin-top: 50px;
+      width: 100px;
+      align-items: center;
+      justify-content: center;
+      padding: 10px !important;
     }
   }
 
-  @media screen  and (min-width:992px){
-
-    h1{
-        font-size:2.6rem;
-        position:relative;
-        right: 195px;
+  @media screen and (min-width: 992px) {
+    h1 {
+      color: white;
+      font-weight: bold;
+      margin-bottom: 30px;
+      font-size: 2.6rem;
+      width: 80%;
+      max-width: 850px;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: left;
     }
-      .img {
-      position: absolute; /* fixa a imagem */
-      top: 60%; /* centraliza verticalmente */
-      right: 100px; /* distância da borda direita da .content */
+
+    .img {
+      position: absolute;
+      top: 60%;
+      right: 100px;
       transform: translateY(-50%);
       margin-top: 0;
       width: 250px;
@@ -785,128 +757,120 @@ Please change the parent <Route path="${H}"> to <Route path="${H==="/"?"*":`${H}
     }
 
     .tab-content2 .gallery img {
-  width: 80%;
-  max-width: 160px;    /* largura fixa pra manter padrão */
-  height: 130px;   /* altura fixa pra manter padrão */
-  object-fit: cover; /* garante que a imagem preencha o espaço sem distorcer */
-  border-radius: 8px;
-  box-shadow: 0 0 8px rgba(0,0,0,0.3);
-  cursor: pointer; /* fica interativo pra usuário */
-  transition: transform 0.3s ease;
-}
-
-.img8{
-  display: flex;
-}
-
-.img9{
-  display: flex;
-}
-.tab-content3 button{
-  font-size: 1rem;
-}
-
-  .tab-content4 > div{
-    padding: 15px !important ;
-  }
-    
-   .apod-content button{
-    padding: 10px;
-    font-size: 1.05rem;
-    margin-top: 15px;
-  }
-
-
-    img{
-        width: 300px;
+      width: 80%;
+      max-width: 160px;
+      height: 130px;
+      object-fit: cover;
+      border-radius: 8px;
+      box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+      cursor: pointer;
+      transition: transform 0.3s ease;
     }
 
+    .img8 {
+      display: flex;
+    }
+
+    .img9 {
+      display: flex;
+    }
+    .tab-content3 button {
+      font-size: 1rem;
+    }
+
+    .tab-content4 > div {
+      padding: 15px !important ;
+    }
+
+    .apod-content button {
+      padding: 10px;
+      font-size: 1.05rem;
+      margin-top: 15px;
+    }
+
+    img {
+      width: 300px;
+    }
   }
 
-    @media screen  and (min-width:1200px){
+  @media screen and (min-width: 1200px) {
+    .content {
+      height: 550px;
+    }
+    h1 {
+      font-size: 3.1rem;
+    }
 
-        .content{
-            height: 550px;
-        }
-        h1{
-            font-size: 3.1rem;
-            position:relative;
-            right: 168px;
-        }
+    .menu-desktop {
+      font-size: 1.2rem !important;
+    }
 
-        .menu-desktop{
-            font-size: 1.2rem !important;
-        }
+    .content h2 {
+      font-size: 1.8rem;
+    }
 
-        .content h2{
-            font-size: 1.8rem;
-        }
-
-        .data-text{
-            margin-top: 30px;
-        }
-        .label{
-            font-size: 1.35rem !important;
-        }
-        .value{
-            font-size: 1.25rem;
-        }
-      .img {
+    .data-text {
+      margin-top: 30px;
+    }
+    .label {
+      font-size: 1.35rem !important;
+    }
+    .value {
+      font-size: 1.25rem;
+    }
+    .img {
       position: absolute; /* fixa a imagem */
       top: 60%; /* centraliza verticalmente */
       right: 100px; /* distância da borda direita da .content */
       transform: translateY(-50%);
       margin-top: 0;
-        
+
       z-index: 5;
     }
 
-    
     .tab-content2 .gallery img {
-  width: 80%;
-  max-width: 180px;    /* largura fixa pra manter padrão */
-  height: 150px;   /* altura fixa pra manter padrão */
-  object-fit: cover; /* garante que a imagem preencha o espaço sem distorcer */
-  border-radius: 8px;
-  box-shadow: 0 0 8px rgba(0,0,0,0.3);
-  cursor: pointer; /* fica interativo pra usuário */
-  transition: transform 0.3s ease;
-}
+      width: 80%;
+      max-width: 180px; /* largura fixa pra manter padrão */
+      height: 150px; /* altura fixa pra manter padrão */
+      object-fit: cover; /* garante que a imagem preencha o espaço sem distorcer */
+      border-radius: 8px;
+      box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+      cursor: pointer; /* fica interativo pra usuário */
+      transition: transform 0.3s ease;
+    }
 
-.img8{
-  display: flex;
-}
+    .img8 {
+      display: flex;
+    }
 
-.img9{
-  display: flex;
-}
+    .img9 {
+      display: flex;
+    }
 
-.tab-content3 h2{
-    font-size: 1.45rem;
-    width: 400px;
-  }
+    .tab-content3 h2 {
+      font-size: 1.45rem;
+      width: 400px;
+    }
 
-  .tab-content3 h3{
-    font-size: 1.35rem;
-    width: 300px !;
-    text-align: center;
-  }
+    .tab-content3 h3 {
+      font-size: 1.35rem;
+      width: 300px !;
+      text-align: center;
+    }
 
-.tab-content3 button{
-  margin-top: 20px;
-  font-size: 1.2rem;
-  margin-top: 35px;
-}
+    .tab-content3 button {
+      margin-top: 20px;
+      font-size: 1.2rem;
+      margin-top: 35px;
+    }
 
+    .apod-content p {
+      margin-top: 10px;
+      font-size: 1rem;
+    }
 
-
-  .apod-content p{
-    margin-top: 10px;
-    font-size: 1rem;
-  }
-
-    .exit{
-        margin-top: 35px;
+    .exit {
+      margin-top: 35px;
     }
   }
 `,hm="/AstroLens/assets/earth-CB8vXua-.png",d1="/AstroLens/assets/mars-DDqCN0-2.png",h1="/AstroLens/assets/netuno-p_1kqKJl.png",m1="/AstroLens/assets/jupiter-BQZXVob-.png",p1="/AstroLens/assets/urano-34LYypJp.png",g1="/AstroLens/assets/saturno2-uWZ6S6jW.png",y1="/AstroLens/assets/mercurio-FenHQYN7.png",v1="/AstroLens/assets/venus-BPubL4vb.png",b1="/AstroLens/assets/unknown-jjRIS_N-.png",x1="/AstroLens/assets/plutao-CEdzcO9R.png",S1="/AstroLens/assets/img-teste-CIQu1vuk.jpg",E1="/AstroLens/assets/img-teste1-Btf6I2Uh.jpg",A1="/AstroLens/assets/img-teste2-N1qKzGyj.jpg",z1="/AstroLens/assets/img-teste3-DDmksLsu.jpg",T1="/AstroLens/assets/img-teste4-rTDhgDXd.jpg",R1="/AstroLens/assets/img-teste5-B_BlCU4c.jpg",D1="/AstroLens/assets/img-teste7-Dwe4DXgK.jpg",w1="/AstroLens/assets/img-teste8-BO1TrW3T.jpg",O1="/AstroLens/assets/img-teste4-rTDhgDXd.jpg";function N1(){const u="QH7sKVDhwKAMTjEYAh8UdhjeAfN78CDplRi9Savj",[c,o]=O.useState(null),[r,f]=O.useState(!1),[h,y]=O.useState(""),[z,g]=O.useState(null),[m,E]=O.useState(hm),[j,C]=O.useState(null),[L,q]=O.useState(""),[G,X]=O.useState(null),[H,J]=O.useState(""),[Z,tt]=O.useState([]),K={earth:hm,mars:d1,neptune:h1,jupiter:m1,uranus:p1,saturn:g1,mercury:y1,venus:v1,pluto:x1},et=[{id:"planetas",label:"Planetas e Exoplanetas"},{id:"galeria",label:"Galeria Espacial"},{id:"apod",label:"APOD"},{id:"previsao",label:"Previsão Espacial"}],$=il();O.useEffect(()=>{async function R(){try{const Y=await fetch("https://api.le-systeme-solaire.net/rest/bodies/earth");if(Y.ok){const V=await Y.json();g(V),y("Earth"),o("planetas")}}catch(B){console.error("Erro ao buscar Terra:",B)}}R()},[]);function pt(R){o(R),f(!1)}function gt(){localStorage.removeItem("usuarioLogado"),alert("Você saiu com sucesso!"),$("/")}const ut={terra:"earth",marte:"mars",jupiter:"jupiter",saturno:"saturn",venus:"venus",mercurio:"mercury",netuno:"neptune",urano:"uranus",plutão:"pluto"};async function Tt(){try{const R=h.trim().toLowerCase();if(!R){console.warn("Digite o nome de um planeta para buscar");return}const B=ut[R]||R;K[B]?E(K[B]):E(b1);const Y=`https://api.le-systeme-solaire.net/rest/bodies/${B}`,V=await fetch(Y);if(!V.ok){console.error("Planeta não encontrado:",V.status),g(null);return}const W=await V.json();g(W),o("planetas"),console.log("Planeta encontrado:",W)}catch(R){console.error("Erro ao buscar dados:",R),g(null)}}const Nt=z?.moons||[],oe=()=>{$("/gallery-nasa")},_e=async()=>{const B=await(await fetch(`https://api.nasa.gov/planetary/apod?api_key=${u}`)).json();C(B)},Ut=R=>{if(!R)return"";const B=new Date(R),Y=String(B.getDate()).padStart(2,"0"),V=String(B.getMonth()+1).padStart(2,"0"),W=B.getFullYear(),I=String(B.getHours()).padStart(2,"0"),Yt=String(B.getMinutes()).padStart(2,"0");return`${Y}/${V}/${W} ${I}:${Yt}`},N=R=>R.toISOString().split("T")[0],Q=async()=>{try{const R=new Date,B=new Date;B.setDate(R.getDate()-7);const Y=`https://kauai.ccmc.gsfc.nasa.gov/DONKI/WS/get/CME?startDate=${N(B)}&endDate=${N(R)}`,W=await(await fetch(Y)).json();W.length>0?(q(Ut(W[0].startTime)),W[1]&&W[1].cmeAnalyses&&W[1].cmeAnalyses[0]?X(W[1].cmeAnalyses[0].speed):W[0].cmeAnalyses&&W[0].cmeAnalyses[0]?X(W[0].cmeAnalyses[0].speed):X(null)):(q("Nenhum CME recente"),X(null))}catch(R){console.error("Erro ao buscar CME:",R),q("Erro ao carregar CME"),X(null)}},P=async()=>{try{const R=new Date,B=new Date;B.setDate(R.getDate()-7);const Y=`https://kauai.ccmc.gsfc.nasa.gov/DONKI/WS/get/FLR?startDate=${N(B)}&endDate=${N(R)}`,V=await fetch(Y);if(!V.ok)throw new Error("Erro ao buscar dados de flare solar");const W=await V.json();console.log("Dados de flare solar:",W),J(W)}catch(R){console.error(R)}},rt=async()=>{try{const R=new Date,B=new Date;B.setDate(R.getDate()-7);const Y=`https://kauai.ccmc.gsfc.nasa.gov/DONKI/WS/get/GST?startDate=${N(B)}&endDate=${N(R)}`,V=await fetch(Y);if(!V.ok)throw new Error("Erro ao buscar tempestades geomagnéticas");const W=await V.json();if(W.length>0&&W[0].sentNotifications&&W[0].sentNotifications.length>0){const I=W[0].sentNotifications.slice(-1)[0];tt([I])}else tt([])}catch(R){console.error(R),tt([])}},v=()=>{$("/apod-nasa")};return O.useEffect(()=>{_e(),Q(),P(),rt()},[]),x.jsxs(f1,{children:[x.jsx("h1",{children:"NASA Space Explorer"}),x.jsxs("div",{className:"content",children:[x.jsx("button",{className:"hamburger",onClick:()=>f(!r),"aria-label":"Abrir menu",children:"☰"}),r&&x.jsx("nav",{className:"menu-hamburger mobile-menu",children:et.map(R=>x.jsx("div",{className:`aba-item ${c===R.id?"active":""}`,onClick:()=>pt(R.id),children:R.label},R.id))}),x.jsx("nav",{className:"menu-desktop",children:et.map(R=>x.jsx("div",{className:`aba-item ${c===R.id?"active":""}`,onClick:()=>pt(R.id),children:R.label},R.id))}),c==="planetas"&&x.jsxs("div",{className:"tab-content data-text",children:[x.jsx("h2",{children:"Pesquise o Planeta:"}),x.jsxs("div",{className:"input",children:[x.jsx("input",{type:"text",value:h,onChange:R=>y(R.target.value)}),x.jsx("button",{onClick:Tt,children:"Buscar"})]}),z?x.jsxs("div",{className:"planetary-data",children:[x.jsx("h2",{children:"Dados do Planeta"}),x.jsxs("div",{className:"row",children:[x.jsx("span",{className:"label",children:x.jsx("strong",{children:"Nome: "})}),x.jsx("span",{className:"value",children:z.englishName})]}),x.jsxs("div",{className:"row",children:[x.jsx("span",{className:"label",children:x.jsx("strong",{children:"Luas: "})}),x.jsx("span",{className:"value",children:Nt.length>0?Nt.slice(0,5).map(R=>R.moon).join(", ")+(Nt.length>5?" ...":""):"Sem luas"})]}),x.jsxs("div",{className:"row",children:[x.jsx("span",{className:"label",children:x.jsx("strong",{children:"Temperatura: "})}),x.jsx("span",{className:"value",children:z.avgTemp!==void 0?`${(z.avgTemp-273.15).toFixed(1)} °C`:"N/D"})]}),x.jsx("button",{className:"exit",onClick:gt,children:"Sair"})]}):x.jsx("p",{className:"data-not-found",children:"Nenhum dado para mostrar. Faça uma busca."}),x.jsx("div",{className:"img",children:x.jsx("img",{src:m,alt:`Imagem do planeta ${z?.englishName||""}`})})]}),c==="galeria"&&x.jsxs("div",{className:"tab-content2",children:[x.jsx("h2",{children:"Galeria Espacial"}),x.jsxs("div",{className:"gallery",children:[x.jsx("img",{src:S1,alt:"Imagem 1"}),x.jsx("img",{src:E1,alt:"Imagem 2"}),x.jsx("img",{src:A1,alt:"Imagem 3",className:"img3"}),x.jsx("img",{src:z1,alt:"Imagem 4",className:"img4"}),x.jsx("img",{src:T1,alt:"Imagem 5",className:"img5"}),x.jsx("img",{src:R1,alt:"Imagem 6",className:"img6"}),x.jsx("img",{src:D1,alt:"Imagem 7",className:"img7"}),x.jsx("img",{src:w1,alt:"Imagem 8",className:"img8"}),x.jsx("img",{src:O1,alt:"Imagem 9",className:"img9"})]}),x.jsx("button",{className:"button-gallery",onClick:oe,children:"Ver mais"})]}),c==="apod"&&x.jsxs("div",{className:"tab-content3",children:[x.jsx("h2",{children:"Imagem Astronômica do Dia:"}),j?x.jsxs("div",{className:"apod-content",children:[x.jsx("h3",{children:j.title}),j.media_type==="image"?x.jsx("img",{src:j.url,alt:j.title}):j.media_type==="video"?x.jsx("iframe",{title:"APOD Video",src:j.url,frameBorder:"0",allow:"encrypted-media",allowFullScreen:!0,width:"100%",height:"400px"}):null,x.jsx("button",{onClick:v,children:"Ver Explicação"})]}):x.jsx("p",{children:"Carregando APOD..."})]}),c==="previsao"&&x.jsxs("div",{className:"tab-content4",children:[x.jsx("h2",{children:"Previsão Espacial"}),x.jsxs("div",{className:"cme",children:[x.jsx("p",{children:x.jsx("strong",{children:"Último CME observado"})}),x.jsx("p",{children:L})]}),x.jsxs("div",{className:"velocidade",children:[x.jsx("p",{children:x.jsx("strong",{children:"Velocidade do CME"})}),x.jsx("p",{children:G?`${G.toFixed(0)} km/s`:"N/D"})]}),x.jsxs("div",{className:"flare-solar",children:[x.jsx("p",{children:x.jsx("strong",{children:"Último flare solar"})}),x.jsx("p",{children:H.length>0?Ut(H[0].beginTime):"Nenhum flare recente"})]}),x.jsxs("div",{className:"tempestade",children:[x.jsx("p",{children:x.jsx("strong",{children:"Tempestade geomagnética"})}),Z.length>0?x.jsx("p",{children:x.jsxs("a",{style:{textDecoration:"none",color:"white"},href:Z[0].messageURL,target:"_blank",rel:"noreferrer",children:["Ver alerta ",Z[0].messageID]})}):x.jsx("p",{children:"Nenhum alerta disponível"})]})]})]})]})}const _1=cl.div`
