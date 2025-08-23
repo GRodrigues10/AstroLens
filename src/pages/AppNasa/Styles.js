@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import spaceApp from '../../assets/spaceApp.png';
+import spaceApp from "../../assets/spaceApp.png";
 
 export const StylesAppNasa = styled.div`
   width: 100%;
@@ -17,6 +17,7 @@ export const StylesAppNasa = styled.div`
     color: white;
     font-weight: bold;
     margin-bottom: 30px;
+    text-align: center;
   }
 
   .content {
@@ -26,11 +27,11 @@ export const StylesAppNasa = styled.div`
     height: 500px;
     padding: 20px;
     border-radius: 10px;
-    color: #E5E5E5;
+    color: #e5e5e5;
     position: relative;
     display: flex;
     flex-direction: column;
-    border: 1px solid  #111b2bff;
+    border: 1px solid #111b2bff;
   }
 
   /* Botão hamburguer no topo direito da content */
@@ -75,7 +76,7 @@ export const StylesAppNasa = styled.div`
   }
 
   .aba-item.active {
-    background-color: #3B6CB7;
+    background-color: #3b6cb7;
     font-weight: bold;
   }
 
@@ -101,7 +102,7 @@ export const StylesAppNasa = styled.div`
   }
 
   .menu-desktop .aba-item.active {
-    background-color: #3B6CB7;
+    background-color: #3b6cb7;
     font-weight: bold;
   }
 
@@ -114,7 +115,6 @@ export const StylesAppNasa = styled.div`
   .content .input {
     display: flex;
     width: 100%;
-   
   }
 
   .content input {
@@ -124,25 +124,21 @@ export const StylesAppNasa = styled.div`
     border-radius: 4px;
     padding: 10px;
     outline: none;
-   
   }
 
   .content button {
-    background-color: #3B6CB7;
+    background-color: #3b6cb7;
     color: white;
     border: none;
     padding: 6px 12px;
     margin-left: 8px;
     border-radius: 4px;
     cursor: pointer;
-    transition: .4s ease;
+    transition: 0.4s ease;
 
-    &:hover{
-    background-color: #2a68c5ff;
-
+    &:hover {
+      background-color: #2a68c5ff;
     }
-
-    
   }
 
   .row {
@@ -162,146 +158,135 @@ export const StylesAppNasa = styled.div`
     background: transparent !important;
   }
 
-  .tab-content2{
+  .tab-content2 {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-items: center;
-   
   }
 
-  .tab-content2 h2{
+  .tab-content2 h2 {
     align-self: flex-start;
-    
   }
 
   .tab-content2 .gallery {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 16px;       /* espaçamento entre as imagens */
-  justify-content: center; /* centraliza as imagens na linha */
-  padding: 10px 0;
-}
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px; /* espaçamento entre as imagens */
+    justify-content: center; /* centraliza as imagens na linha */
+    padding: 10px 0;
+  }
 
-.tab-content2 .gallery img {
-  width: 80%;
-  max-width: 250px;    /* largura fixa pra manter padrão */
-  height: 160px;   /* altura fixa pra manter padrão */
-  object-fit: cover; /* garante que a imagem preencha o espaço sem distorcer */
-  border-radius: 8px;
-  box-shadow: 0 0 8px rgba(0,0,0,0.3);
-  cursor: pointer; /* fica interativo pra usuário */
-  transition: transform 0.3s ease;
-}
+  .tab-content2 .gallery img {
+    width: 80%;
+    max-width: 250px; /* largura fixa pra manter padrão */
+    height: 160px; /* altura fixa pra manter padrão */
+    object-fit: cover; /* garante que a imagem preencha o espaço sem distorcer */
+    border-radius: 8px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+    cursor: pointer; /* fica interativo pra usuário */
+    transition: transform 0.3s ease;
+  }
 
-.img3{
-  display: none;
-}
+  .img3 {
+    display: none;
+  }
 
-.img4{
-  display: none;
-}
+  .img4 {
+    display: none;
+  }
 
-.img5{
-  display: none;
-}
+  .img5 {
+    display: none;
+  }
 
-.img6{
-  display: none;
-}
+  .img6 {
+    display: none;
+  }
 
-.img7{
-  display: none;
-}
+  .img7 {
+    display: none;
+  }
 
-.img8{
-  display: none;
-}
+  .img8 {
+    display: none;
+  }
 
-.img9{
-  display: none;
-}
+  .img9 {
+    display: none;
+  }
 
+  .tab-content2 .gallery img:hover {
+    transform: scale(1.05); /* efeito hover suave */
+  }
 
-
-.tab-content2 .gallery img:hover {
-  transform: scale(1.05); /* efeito hover suave */
-}
-
-.tab-content2  .button-gallery {
+  .tab-content2 .button-gallery {
     font-size: 1.2rem;
     position: relative;
     top: 10px;
     padding: 8px;
     width: 80%;
     max-width: 200px;
-}
+  }
 
   span {
     font-size: 1.1rem;
   }
 
-  .tab-content3 h2{
+  .tab-content3 h2 {
     font-size: 1.3rem;
     width: 220px;
   }
 
-    .tab-content3 h3{
+  .tab-content3 h3 {
     font-size: 1.1rem;
     width: 200px;
     text-align: center;
   }
 
-
-  .apod-content{
+  .apod-content {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
   }
 
-  .apod-content img{
+  .apod-content img {
     margin-top: 10px;
-    border: 2px solid #7FFFD4;
+    border: 2px solid #7fffd4;
     border-radius: 5px;
     height: 200px;
     width: 250px;
   }
 
-  
-
-  .apod-content button{
+  .apod-content button {
     padding: 10px;
     font-size: 1.05rem;
     margin-top: 30px;
   }
 
-  .apod-content p{
+  .apod-content p {
     margin-top: 10px;
     font-size: 0.78rem;
   }
 
-  .tab-content4{
+  .tab-content4 {
     display: flex;
     flex-direction: column;
-   
-    
+
     gap: 20px;
     font-size: 1.1rem;
-  
   }
-
 
   .tab-content4 > div {
     cursor: pointer;
-    transition: .4s ease ;
-    &:hover{
+    transition: 0.4s ease;
+    &:hover {
       transform: scale(1.025);
     }
   }
- 
 
-  .tab-content4 .cme{
+  .tab-content4 .cme {
     display: flex;
     padding: 10px;
     gap: 10px;
@@ -311,39 +296,9 @@ export const StylesAppNasa = styled.div`
     justify-content: space-between;
     align-items: center;
     width: 100%;
-
   }
 
-
-  .tab-content4 .velocidade{
-    display: flex;
-    padding: 10px;
-    gap: 10px;
-     background-color: #617aacbd;
-    border-radius: 5px;
-    border: 2px solid black;
-    width: 100%;
-    justify-content: space-between;
-    align-items: center;
-
-  }
-
-
-  .tab-content4 .flare-solar{
-    display: flex;
-    padding: 10px;
-    gap: 10px;
-     background-color: #617aacbd;
-    border-radius: 5px;
-    border: 2px solid black;
-    width: 100%;
-    justify-content: space-between;
-    align-items: center;
-
-  }
-
-
-  .tab-content4 .tempestade{
+  .tab-content4 .velocidade {
     display: flex;
     padding: 10px;
     gap: 10px;
@@ -355,89 +310,106 @@ export const StylesAppNasa = styled.div`
     align-items: center;
   }
 
-  .data-not-found{
+  .tab-content4 .flare-solar {
+    display: flex;
+    padding: 10px;
+    gap: 10px;
+    background-color: #617aacbd;
+    border-radius: 5px;
+    border: 2px solid black;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .tab-content4 .tempestade {
+    display: flex;
+    padding: 10px;
+    gap: 10px;
+    background-color: #617aacbd;
+    border-radius: 5px;
+    border: 2px solid black;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .data-not-found {
     margin-top: 20px;
   }
 
-  .exit{
+  .exit {
     display: none;
   }
 
-  
+  @media screen and (min-width: 530px) {
+    .tab-content2 .gallery {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
 
-  @media screen and (min-width:530px) {
-        
-.tab-content2 .gallery{
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+    .tab-content2 .gallery img {
+      width: 80%;
+      max-width: 180px; /* largura fixa pra manter padrão */
+      height: 150px; /* altura fixa pra manter padrão */
+      object-fit: cover; /* garante que a imagem preencha o espaço sem distorcer */
+      border-radius: 8px;
+      box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+      cursor: pointer; /* fica interativo pra usuário */
+      transition: transform 0.3s ease;
+    }
 
-}
+    .img3 {
+      display: flex;
+    }
 
-.tab-content2 .gallery img {
-  width: 80%;
-  max-width: 180px;    /* largura fixa pra manter padrão */
-  height: 150px;   /* altura fixa pra manter padrão */
-  object-fit: cover; /* garante que a imagem preencha o espaço sem distorcer */
-  border-radius: 8px;
-  box-shadow: 0 0 8px rgba(0,0,0,0.3);
-  cursor: pointer; /* fica interativo pra usuário */
-  transition: transform 0.3s ease;
-}
-        
-.img3{
-  display: flex;
-}
+    .img4 {
+      display: flex;
+    }
 
-.img4{
-  display: flex;
-}
+    .img5 {
+      display: none;
+    }
 
-.img5{
-  display: none;
-}
+    .img6 {
+      display: none;
+    }
 
-.img6{
-  display: none;
-}
+    .img7 {
+      display: none;
+    }
 
-.img7{
-  display: none;
-}
+    .img8 {
+      display: none;
+    }
 
-.img8{
-  display: none;
-}
+    .img9 {
+      display: none;
+    }
 
-.img9{
-  display: none;
-}
+    .tab-content3 h2 {
+      font-size: 1.3rem;
+      width: 300px;
+    }
 
+    .tab-content3 h3 {
+      font-size: 1.2rem;
+      width: 300px;
+    }
 
-.tab-content3 h2{
-    font-size: 1.3rem;
-    width: 300px;
-  }
+    .apod-content p {
+      margin-top: 10px;
+      font-size: 0.9rem;
+    }
 
-  .tab-content3 h3{
-    font-size: 1.2rem;
-    width: 300px;
-  }
+    .tab-content4 h2 {
+      font-size: 1.5rem;
+    }
 
-
-  .apod-content p{
-    margin-top: 10px;
-    font-size: 0.9rem;
-  }
-
-   .tab-content4 h2{
-    font-size: 1.5rem;
-  }
-
-  .tab-content4 p{
-    font-size: 1.25rem;
-  }
-
+    .tab-content4 p {
+      font-size: 1.25rem;
+    }
   }
 
   /* Media query para desktop */
@@ -482,48 +454,44 @@ export const StylesAppNasa = styled.div`
       width: 100px;
       z-index: 5;
     }
- .apod-content img{
-    margin-top: 20px;
-    border: 2px solid #7FFFD4;
-    border-radius: 5px;
-    height: 230px;
-    width: 320px;
-  }
-    
-
-
-    img{
-        width: 250px;
+    .apod-content img {
+      margin-top: 20px;
+      border: 2px solid #7fffd4;
+      border-radius: 5px;
+      height: 230px;
+      width: 320px;
     }
 
+    img {
+      width: 250px;
+    }
 
     .tab-content2 .gallery img {
-  width: 80%;
-  max-width: 150px;    /* largura fixa pra manter padrão */
-  height: 120px;   /* altura fixa pra manter padrão */
-  object-fit: cover; /* garante que a imagem preencha o espaço sem distorcer */
-  border-radius: 8px;
-  box-shadow: 0 0 8px rgba(0,0,0,0.3);
-  cursor: pointer; /* fica interativo pra usuário */
-  transition: transform 0.3s ease;
-}
+      width: 80%;
+      max-width: 150px; /* largura fixa pra manter padrão */
+      height: 120px; /* altura fixa pra manter padrão */
+      object-fit: cover; /* garante que a imagem preencha o espaço sem distorcer */
+      border-radius: 8px;
+      box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+      cursor: pointer; /* fica interativo pra usuário */
+      transition: transform 0.3s ease;
+    }
 
-    .img6{
-  display:flex;
-}
+    .img6 {
+      display: flex;
+    }
 
-.img7{
-  display: flex;
-}
+    .img7 {
+      display: flex;
+    }
 
-.img8{
-  display: none;
-}
+    .img8 {
+      display: none;
+    }
 
-.img9{
-  display: none;
-}
-
+    .img9 {
+      display: none;
+    }
 
     .data-text h2 {
       font-size: 1.5rem;
@@ -533,55 +501,59 @@ export const StylesAppNasa = styled.div`
       font-size: 1.3rem;
     }
 
-    
-  .tab-content3 h2{
-    width: 320px;
+    .tab-content3 h2 {
+      width: 320px;
       font-size: 1.4rem;
-  }
+    }
 
-  .tab-content3 h3{
-    font-size: 1.3rem;
-  }
+    .tab-content3 h3 {
+      font-size: 1.3rem;
+    }
 
-  .tab-content3 p{
-    font-size: 1rem;
-  }
+    .tab-content3 p {
+      font-size: 1rem;
+    }
 
-      .tab-content4 h2{
-    font-size: 1.6rem;
-    text-align: start;
-  }
+    .tab-content4 h2 {
+      font-size: 1.6rem;
+      text-align: start;
+    }
 
-  .tab-content4 p{
-    font-size: 1.3rem;
-  }
+    .tab-content4 p {
+      font-size: 1.3rem;
+    }
 
- .data-not-found{
-    margin-top: 10px;
-  }
-    
+    .data-not-found {
+      margin-top: 10px;
+    }
 
-    .exit{
-        display: flex;
-        margin-top: 50px;
-        width: 100px;
-        align-items: center;
-        justify-content: center;
-        padding: 10px !important;
+    .exit {
+      display: flex;
+      margin-top: 50px;
+      width: 100px;
+      align-items: center;
+      justify-content: center;
+      padding: 10px !important;
     }
   }
 
-  @media screen  and (min-width:992px){
-
-    h1{
-        font-size:2.6rem;
-        position:relative;
-        right: 195px;
+  @media screen and (min-width: 992px) {
+    h1 {
+      color: white;
+      font-weight: bold;
+      margin-bottom: 30px;
+      font-size: 2.6rem;
+      width: 80%;
+      max-width: 850px;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: left;
     }
-      .img {
-      position: absolute; /* fixa a imagem */
-      top: 60%; /* centraliza verticalmente */
-      right: 100px; /* distância da borda direita da .content */
+
+    .img {
+      position: absolute;
+      top: 60%;
+      right: 100px;
       transform: translateY(-50%);
       margin-top: 0;
       width: 250px;
@@ -589,128 +561,120 @@ export const StylesAppNasa = styled.div`
     }
 
     .tab-content2 .gallery img {
-  width: 80%;
-  max-width: 160px;    /* largura fixa pra manter padrão */
-  height: 130px;   /* altura fixa pra manter padrão */
-  object-fit: cover; /* garante que a imagem preencha o espaço sem distorcer */
-  border-radius: 8px;
-  box-shadow: 0 0 8px rgba(0,0,0,0.3);
-  cursor: pointer; /* fica interativo pra usuário */
-  transition: transform 0.3s ease;
-}
-
-.img8{
-  display: flex;
-}
-
-.img9{
-  display: flex;
-}
-.tab-content3 button{
-  font-size: 1rem;
-}
-
-  .tab-content4 > div{
-    padding: 15px !important ;
-  }
-    
-   .apod-content button{
-    padding: 10px;
-    font-size: 1.05rem;
-    margin-top: 15px;
-  }
-
-
-    img{
-        width: 300px;
+      width: 80%;
+      max-width: 160px;
+      height: 130px;
+      object-fit: cover;
+      border-radius: 8px;
+      box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+      cursor: pointer;
+      transition: transform 0.3s ease;
     }
 
+    .img8 {
+      display: flex;
+    }
+
+    .img9 {
+      display: flex;
+    }
+    .tab-content3 button {
+      font-size: 1rem;
+    }
+
+    .tab-content4 > div {
+      padding: 15px !important ;
+    }
+
+    .apod-content button {
+      padding: 10px;
+      font-size: 1.05rem;
+      margin-top: 15px;
+    }
+
+    img {
+      width: 300px;
+    }
   }
 
-    @media screen  and (min-width:1200px){
+  @media screen and (min-width: 1200px) {
+    .content {
+      height: 550px;
+    }
+    h1 {
+      font-size: 3.1rem;
+    }
 
-        .content{
-            height: 550px;
-        }
-        h1{
-            font-size: 3.1rem;
-            position:relative;
-            right: 168px;
-        }
+    .menu-desktop {
+      font-size: 1.2rem !important;
+    }
 
-        .menu-desktop{
-            font-size: 1.2rem !important;
-        }
+    .content h2 {
+      font-size: 1.8rem;
+    }
 
-        .content h2{
-            font-size: 1.8rem;
-        }
-
-        .data-text{
-            margin-top: 30px;
-        }
-        .label{
-            font-size: 1.35rem !important;
-        }
-        .value{
-            font-size: 1.25rem;
-        }
-      .img {
+    .data-text {
+      margin-top: 30px;
+    }
+    .label {
+      font-size: 1.35rem !important;
+    }
+    .value {
+      font-size: 1.25rem;
+    }
+    .img {
       position: absolute; /* fixa a imagem */
       top: 60%; /* centraliza verticalmente */
       right: 100px; /* distância da borda direita da .content */
       transform: translateY(-50%);
       margin-top: 0;
-        
+
       z-index: 5;
     }
 
-    
     .tab-content2 .gallery img {
-  width: 80%;
-  max-width: 180px;    /* largura fixa pra manter padrão */
-  height: 150px;   /* altura fixa pra manter padrão */
-  object-fit: cover; /* garante que a imagem preencha o espaço sem distorcer */
-  border-radius: 8px;
-  box-shadow: 0 0 8px rgba(0,0,0,0.3);
-  cursor: pointer; /* fica interativo pra usuário */
-  transition: transform 0.3s ease;
-}
+      width: 80%;
+      max-width: 180px; /* largura fixa pra manter padrão */
+      height: 150px; /* altura fixa pra manter padrão */
+      object-fit: cover; /* garante que a imagem preencha o espaço sem distorcer */
+      border-radius: 8px;
+      box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+      cursor: pointer; /* fica interativo pra usuário */
+      transition: transform 0.3s ease;
+    }
 
-.img8{
-  display: flex;
-}
+    .img8 {
+      display: flex;
+    }
 
-.img9{
-  display: flex;
-}
+    .img9 {
+      display: flex;
+    }
 
-.tab-content3 h2{
-    font-size: 1.45rem;
-    width: 400px;
-  }
+    .tab-content3 h2 {
+      font-size: 1.45rem;
+      width: 400px;
+    }
 
-  .tab-content3 h3{
-    font-size: 1.35rem;
-    width: 300px !;
-    text-align: center;
-  }
+    .tab-content3 h3 {
+      font-size: 1.35rem;
+      width: 300px !;
+      text-align: center;
+    }
 
-.tab-content3 button{
-  margin-top: 20px;
-  font-size: 1.2rem;
-  margin-top: 35px;
-}
+    .tab-content3 button {
+      margin-top: 20px;
+      font-size: 1.2rem;
+      margin-top: 35px;
+    }
 
+    .apod-content p {
+      margin-top: 10px;
+      font-size: 1rem;
+    }
 
-
-  .apod-content p{
-    margin-top: 10px;
-    font-size: 1rem;
-  }
-
-    .exit{
-        margin-top: 35px;
+    .exit {
+      margin-top: 35px;
     }
   }
-`
+`;
