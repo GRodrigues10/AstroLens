@@ -13,3 +13,5 @@ Principais recursos do AstroLens incluem:
 - Previsão de clima espacial, mostrando eventos como tempestades geomagnéticas, ejeções de massa coronal (CME) e flares solares, fornecendo dados em tempo real para monitoramento do ambiente espacial (usando a API DONKI da NASA).
 
 Construído com as tecnologias React.js, React Router DOM e Styled Components, o AstroLens oferece uma navegação fluida e responsiva, garantindo uma experiência agradável em diferentes dispositivos. Ideal para quem quer aprender mais sobre o universo ou simplesmente admirar sua beleza, o AstroLens é uma porta de entrada para o espaço ao alcance das suas mãos.
+
+### Link do Projeto: https://grodrigues10.github.io/AstroLens/
