@@ -16,7 +16,6 @@ Construído com as tecnologias React.js, React Router DOM, Styled Components e L
 
 ### Link do Projeto: https://grodrigues10.github.io/AstroLens/
 
----
 
 <h2>Imagens do Projeto</h2>
 
