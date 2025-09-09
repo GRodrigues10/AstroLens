@@ -8,7 +8,7 @@ import uranoImg from "../../assets/urano.png";
 import saturnoImg from "../../assets/saturno2.png";
 import mercurioImg from "../../assets/mercurio.png";
 import venusImg from "../../assets/venus.png";
-import imgUnknown from '../../assets/unknown.png'
+import imgUnknown from "../../assets/unknown.png";
 import plutaoImg from "../../assets/plutao.png";
 import img1 from "../../assets/img-teste.jpg";
 import img2 from "../../assets/img-teste1.jpg";
@@ -22,9 +22,6 @@ import img9 from "../../assets/img-teste9.jpg";
 
 import { useNavigate } from "react-router-dom";
 
-
-
-
 function AppNasa() {
   const APIKEY = import.meta.env.VITE_APIKEY;
   const [activeTab, setActiveTab] = useState(null);
@@ -37,7 +34,7 @@ function AppNasa() {
   const [speed, setSpeed] = useState(null);
   const [flareSolar, setFlareSolar] = useState("");
   const [geomagneticStormLinks, setGeomagneticStormLinks] = useState([]);
-  
+
   const planetsImgs = {
     earth: earthImg,
     mars: marsImg,
@@ -63,8 +60,8 @@ function AppNasa() {
     // Buscar Terra ao montar o componente
     async function fetchEarth() {
       try {
-        const url = `https://api.le-systeme-solaire.net/rest/bodies/earth`;
-        const response = await fetch(url);
+        const BACKEND_URL = "http://localhost:5000/api/bodies/earth";
+        const response = await fetch(BACKEND_URL);
         if (response.ok) {
           const result = await response.json();
           setData(result);
@@ -83,11 +80,11 @@ function AppNasa() {
     setMenuOpen(false);
   }
 
- function exit() {
-  localStorage.removeItem("usuarioLogado"); 
-   alert("Você saiu com sucesso!"); 
-  navigate("/"); 
-}
+  function exit() {
+    localStorage.removeItem("usuarioLogado");
+    alert("Você saiu com sucesso!");
+    navigate("/");
+  }
 
   const nomePTtoID = {
     terra: "earth",
@@ -117,8 +114,8 @@ function AppNasa() {
         setImageUrl(imgUnknown); // fallback
       }
 
-      const url = `https://api.le-systeme-solaire.net/rest/bodies/${idAPI}`;
-      const response = await fetch(url);
+      const BACKEND_URL = `http://localhost:5000/api/bodies/${idAPI}`;
+      const response = await fetch(BACKEND_URL);
 
       if (!response.ok) {
         console.error("Planeta não encontrado:", response.status);
@@ -367,7 +364,9 @@ function AppNasa() {
                 </button>
               </div>
             ) : (
-              <p className="data-not-found">Nenhum dado para mostrar. Faça uma busca.</p>
+              <p className="data-not-found">
+                Nenhum dado para mostrar. Faça uma busca.
+              </p>
             )}
 
             <div className="img">
