@@ -19,6 +19,7 @@ import img6 from "../../assets/img-teste5.jpg";
 import img7 from "../../assets/img-teste7.jpg";
 import img8 from "../../assets/img-teste8.jpg";
 import img9 from "../../assets/img-teste9.jpg";
+import planetData from "../../../planets.json";
 
 import { useNavigate } from "react-router-dom";
 
@@ -57,22 +58,11 @@ function AppNasa() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    // Buscar Terra ao montar o componente
-    async function fetchEarth() {
-      try {
-        const BACKEND_URL = "http://localhost:5000/api/bodies/earth";
-        const response = await fetch(BACKEND_URL);
-        if (response.ok) {
-          const result = await response.json();
-          setData(result);
-          setSearch("Earth");
-          setActiveTab("planetas");
-        }
-      } catch (error) {
-        console.error("Erro ao buscar Terra:", error);
-      }
-    }
-    fetchEarth();
+    // Buscar Terra no JSON local
+    const earth = planetData.find((p) => p.id === "earth");
+    setData(earth);
+    setSearch("Earth");
+    setActiveTab("planetas");
   }, []);
 
   function handleTabClick(id) {
@@ -98,40 +88,23 @@ function AppNasa() {
     plutão: "pluto",
   };
 
-  async function apiData() {
-    try {
-      const nomeBusca = search.trim().toLowerCase();
+ function apiData() {
+  const nomeBusca = search.trim().toLowerCase();
+  if (!nomeBusca) return;
 
-      if (!nomeBusca) {
-        console.warn("Digite o nome de um planeta para buscar");
-        return;
-      }
+  const idAPI = nomePTtoID[nomeBusca] || nomeBusca;
+  const planet = planetData.find(p => p.id === idAPI);
 
-      const idAPI = nomePTtoID[nomeBusca] || nomeBusca;
-      if (planetsImgs[idAPI]) {
-        setImageUrl(planetsImgs[idAPI]);
-      } else {
-        setImageUrl(imgUnknown); // fallback
-      }
-
-      const BACKEND_URL = `http://localhost:5000/api/bodies/${idAPI}`;
-      const response = await fetch(BACKEND_URL);
-
-      if (!response.ok) {
-        console.error("Planeta não encontrado:", response.status);
-        setData(null);
-        return;
-      }
-
-      const result = await response.json();
-      setData(result);
-      setActiveTab("planetas");
-      console.log("Planeta encontrado:", result);
-    } catch (error) {
-      console.error("Erro ao buscar dados:", error);
-      setData(null);
-    }
+  if (planet) {
+    setData(planet);
+    setImageUrl(planetsImgs[planet.id] || imgUnknown);
+    setActiveTab("planetas");
+  } else {
+    setData(null);
+    setImageUrl(imgUnknown);
+    console.warn("Planeta não encontrado");
   }
+}
 
   // Preparar dados das luas com segurança
   const luas = data?.moons || [];

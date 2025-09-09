@@ -1,0 +1,74 @@
+[
+  {
+    "id": "mercury",
+    "name": "Mercúrio",
+    "englishName": "Mercury",
+    "moons": [],
+    "avgTemp": 440,
+    "gravity": 3.7
+  },
+  {
+    "id": "venus",
+    "name": "Vênus",
+    "englishName": "Venus",
+    "moons": [],
+    "avgTemp": 737,
+    "gravity": 8.87
+  },
+  {
+    "id": "earth",
+    "name": "Terra",
+    "englishName": "Earth",
+    "moons": [{"moon": "Lua"}],
+    "avgTemp": 288,
+    "gravity": 9.81
+  },
+  {
+    "id": "mars",
+    "name": "Marte",
+    "englishName": "Mars",
+    "moons": [{"moon": "Fobos"}, {"moon": "Deimos"}],
+    "avgTemp": 210,
+    "gravity": 3.71
+  },
+  {
+    "id": "jupiter",
+    "name": "Júpiter",
+    "englishName": "Jupiter",
+    "moons": [{"moon": "Io"}, {"moon": "Europa"}, {"moon": "Ganimedes"}, {"moon": "Calisto"}],
+    "avgTemp": 165,
+    "gravity": 24.79
+  },
+  {
+    "id": "saturn",
+    "name": "Saturno",
+    "englishName": "Saturn",
+    "moons": [{"moon": "Titã"}, {"moon": "Reia"}, {"moon": "Jápeto"}, {"moon": "Dione"}],
+    "avgTemp": 134,
+    "gravity": 10.44
+  },
+  {
+    "id": "uranus",
+    "name": "Urano",
+    "englishName": "Uranus",
+    "moons": [{"moon": "Titania"}, {"moon": "Oberon"}, {"moon": "Umbriel"}, {"moon": "Ariel"}, {"moon": "Miranda"}],
+    "avgTemp": 76,
+    "gravity": 8.69
+  },
+  {
+    "id": "neptune",
+    "name": "Netuno",
+    "englishName": "Neptune",
+    "moons": [{"moon": "Tritão"}, {"moon": "Nereida"}],
+    "avgTemp": 72,
+    "gravity": 11.15
+  },
+  {
+    "id": "pluto",
+    "name": "Plutão",
+    "englishName": "Pluto",
+    "moons": [{"moon": "Caronte"}],
+    "avgTemp": 44,
+    "gravity": 0.62
+  }
+]
