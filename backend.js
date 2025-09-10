@@ -12,7 +12,7 @@ const API_TOKEN = 'b81410e5-6152-40a1-8ecc-bdac961dc599';
 app.use(cors());
 app.use(express.json());
 
-// Endpoint para buscar todos os corpos
+// Endpoint para buscar todos os corpos 
 app.get("/api/bodies", async (req, res) => {
   try {
     const response = await axios.get("https://api.le-systeme-solaire.net/rest/bodies/", {

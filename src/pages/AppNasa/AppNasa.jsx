@@ -88,23 +88,23 @@ function AppNasa() {
     plutão: "pluto",
   };
 
- function apiData() {
-  const nomeBusca = search.trim().toLowerCase();
-  if (!nomeBusca) return;
+  function apiData() {
+    const nomeBusca = search.trim().toLowerCase();
+    if (!nomeBusca) return;
 
-  const idAPI = nomePTtoID[nomeBusca] || nomeBusca;
-  const planet = planetData.find(p => p.id === idAPI);
+    const idAPI = nomePTtoID[nomeBusca] || nomeBusca;
+    const planet = planetData.find((p) => p.id === idAPI);
 
-  if (planet) {
-    setData(planet);
-    setImageUrl(planetsImgs[planet.id] || imgUnknown);
-    setActiveTab("planetas");
-  } else {
-    setData(null);
-    setImageUrl(imgUnknown);
-    console.warn("Planeta não encontrado");
+    if (planet) {
+      setData(planet);
+      setImageUrl(planetsImgs[planet.id] || imgUnknown);
+      setActiveTab("planetas");
+    } else {
+      setData(null);
+      setImageUrl(imgUnknown);
+      console.warn("Planeta não encontrado");
+    }
   }
-}
 
   // Preparar dados das luas com segurança
   const luas = data?.moons || [];
@@ -309,7 +309,7 @@ function AppNasa() {
 
                 <div className="row">
                   <span className="label">
-                    <strong>Luas: </strong>
+                    <strong>{luas.length === 1 ? "Lua: " : "Luas: "}</strong>
                   </span>
                   <span className="value">
                     {luas.length > 0
